@@ -102,5 +102,13 @@ public class BibliotecaTest {
         assertEquals("", outputStream.toString());
     }
 
+    @Test
+    public void testInvalidOption() {
+        ByteArrayInputStream in = new ByteArrayInputStream("B\nQ\n".getBytes());
+        System.setIn(in);
+        bibliotecaApp.chooseOption(bibliotecaApp);
+        assertEquals("Select a valid option!\n", outputStream.toString());
+    }
+
 
 }

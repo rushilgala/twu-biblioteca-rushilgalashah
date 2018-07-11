@@ -49,6 +49,8 @@ public class BibliotecaApp {
         while (!input.equals("Q")) {
             if (input.equals("L")) {
                 System.out.print(bibliotecaApp.displayBooks(bibliotecaApp.getBooks()));
+            } else {
+            	System.out.println("Select a valid option!");
             }
             input = sc.nextLine().substring(0, 1).toUpperCase();
         }
