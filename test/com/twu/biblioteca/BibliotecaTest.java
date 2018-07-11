@@ -10,14 +10,24 @@ import static org.junit.Assert.assertEquals;
 public class BibliotecaTest {
 
     private BibliotecaApp bibliotecaApp;
-    private String[] books;
+    private Book[] books;
     private String displayedBooks;
 
     @Before
     public void setUp() {
         bibliotecaApp = new BibliotecaApp();
-        books = new String[] {"Life of Pi", "Dune", "The Hobbit", "Tom Sawyer", "To Kill a Mockingbird"};
-        displayedBooks = "Life of Pi\nDune\nThe Hobbit\nTom Sawyer\nTo Kill a Mockingbird\n";
+        books = new Book[] {
+            new Book("Life of Pi", "Yann Martel", 2001),
+            new Book("Dune", "Frank Herbert", 1965),
+            new Book("The Hobbit", "J. R. R. Tolkien", 1937),
+            new Book("Tom Sawyer", "Mark Twain", 1876),
+            new Book("To Kill a Mockingbird", "Harper Lee", 1960)
+        };
+        displayedBooks = "               Life of Pi -          Yann Martel - 2001\n" +
+            "                     Dune -        Frank Herbert - 1965\n" +
+            "               The Hobbit -     J. R. R. Tolkien - 1937\n" +
+            "               Tom Sawyer -           Mark Twain - 1876\n" +
+            "    To Kill a Mockingbird -           Harper Lee - 1960\n";
     }
 
     @Test

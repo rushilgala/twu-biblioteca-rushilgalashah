@@ -12,15 +12,23 @@ public class BibliotecaApp {
         return "Welcome to Biblioteca!";
     }
 
-    public String[] getBooks() {
-        String[] books = new String[] {"Life of Pi", "Dune", "The Hobbit", "Tom Sawyer", "To Kill a Mockingbird"};
+    public Book[] getBooks() {
+        Book[] books = new Book[] {
+            new Book("Life of Pi", "Yann Martel", 2001),
+            new Book("Dune", "Frank Herbert", 1965),
+            new Book("The Hobbit", "J. R. R. Tolkien", 1937),
+            new Book("Tom Sawyer", "Mark Twain", 1876),
+            new Book("To Kill a Mockingbird", "Harper Lee", 1960)
+        };
         return books;
     }
 
-    public String displayBooks(String[] books) {
+    public String displayBooks(Book[] books) {
         StringBuilder sb = new StringBuilder();
-        for (String book : books) {
-            sb.append(book + "\n");
+        for (Book book : books) {
+            sb.append(String.format("%25s - %20s - %4d",
+                book.getTitle(), book.getAuthor(), book.getYearPublished()));
+            sb.append("\n");
         }
         return sb.toString();
     }
