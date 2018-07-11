@@ -15,4 +15,8 @@ public class BibliotecaApp {
         String[] books = new String[] {"Life of Pi", "Dune", "The Hobbit", "Tom Sawyer", "To Kill a Mockingbird"};
         return books;
     }
+
+    public String displayBooks(String[] books) {
+        return null;
+    }
 }
