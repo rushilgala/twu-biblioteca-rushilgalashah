@@ -10,4 +10,8 @@ public class BibliotecaApp {
     public String welcomeMessage() {
         return "Welcome to Biblioteca!";
     }
+
+    public String[] getBooks() {
+        return null;
+    }
 }
