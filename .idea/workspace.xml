@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c416742c-b4d5-4837-814b-d2dcf6ec813f" name="Default" comment="Implemented welcome message">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/rushil.xml" afterDir="false" />
+    <list default="true" id="c416742c-b4d5-4837-814b-d2dcf6ec813f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +17,8 @@
       <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            <state relative-caret-position="154">
+              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
               <folding>
                 <element signature="e#265#266#0" expanded="true" />
                 <element signature="e#312#313#0" expanded="true" />
@@ -32,13 +30,15 @@
       <file leaf-file-name="BibliotecaTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="105" />
+            <state relative-caret-position="210">
+              <caret line="19" column="91" selection-start-line="19" selection-start-column="91" selection-end-line="19" selection-end-column="91" />
               <folding>
                 <element signature="e#468#469#0" expanded="true" />
                 <element signature="e#554#555#0" expanded="true" />
                 <element signature="e#599#600#0" expanded="true" />
                 <element signature="e#629#630#0" expanded="true" />
+                <element signature="e#895#896#0" expanded="true" />
+                <element signature="e#925#926#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,8 +65,8 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Library.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ExampleTest.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" />
       </list>
     </option>
   </component>
@@ -344,28 +344,52 @@
       <option name="project" value="LOCAL" />
       <updated>1531318175653</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Updated projected setup">
+      <created>1531318264302</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1531318264302</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Implemented get books">
+      <created>1531318283062</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1531318283062</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Created failing test to display books">
+      <created>1531318604581</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1531318604581</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Created failing test to display books">
+      <created>1531318872972</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1531318872972</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Created failing test to display books">
+      <created>1531318894676</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1531318894676</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed failing test to display books">
+      <created>1531319029127</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1531319029127</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BookTest - 2018.07.01 at 19h 52m 31s.xml">
-      <configuration name="BookTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookTest - 2018.07.01 at 20h 58m 30s.xml">
-      <configuration name="BookTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookTest - 2018.07.01 at 20h 59m 17s.xml">
-      <configuration name="BookTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookTest - 2018.07.01 at 21h 00m 57s.xml">
-      <configuration name="BookTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookTest - 2018.07.01 at 21h 01m 42s.xml">
-      <configuration name="BookTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BookTest - 2018.07.01 at 21h 02m 15s.xml">
-      <configuration name="BookTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BookTest - 2018.07.01 at 21h 02m 41s.xml">
       <configuration name="BookTest" configurationId="JUnit" />
     </history-entry>
@@ -376,6 +400,24 @@
       <configuration name="BookTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="BibliotecaTest - 2018.07.11 at 14h 51m 02s.xml">
+      <configuration name="BibliotecaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest - 2018.07.11 at 15h 07m 48s.xml">
+      <configuration name="BibliotecaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest - 2018.07.11 at 15h 10m 35s.xml">
+      <configuration name="BibliotecaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest - 2018.07.11 at 15h 12m 42s.xml">
+      <configuration name="BibliotecaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest - 2018.07.11 at 15h 16m 26s.xml">
+      <configuration name="BibliotecaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest - 2018.07.11 at 15h 22m 32s.xml">
+      <configuration name="BibliotecaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest - 2018.07.11 at 15h 23m 03s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -433,7 +475,11 @@
     <MESSAGE value="Added failing test to welcome message" />
     <MESSAGE value="Implemented welcome message" />
     <MESSAGE value="Created failing test to get books" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created failing test to get books" />
+    <MESSAGE value="Updated projected setup" />
+    <MESSAGE value="Implemented get books" />
+    <MESSAGE value="Created failing test to display books" />
+    <MESSAGE value="Fixed failing test to display books" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed failing test to display books" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -461,6 +507,8 @@
             <element signature="e#554#555#0" expanded="true" />
             <element signature="e#599#600#0" expanded="true" />
             <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -522,21 +570,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="105" />
+        <state relative-caret-position="210">
+          <caret line="19" column="91" selection-start-line="19" selection-start-column="91" selection-end-line="19" selection-end-column="91" />
           <folding>
             <element signature="e#468#469#0" expanded="true" />
             <element signature="e#554#555#0" expanded="true" />
             <element signature="e#599#600#0" expanded="true" />
             <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        <state relative-caret-position="154">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding>
             <element signature="e#265#266#0" expanded="true" />
             <element signature="e#312#313#0" expanded="true" />
