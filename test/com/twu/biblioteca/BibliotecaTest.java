@@ -17,7 +17,7 @@ public class BibliotecaTest {
     public void setUp() {
         bibliotecaApp = new BibliotecaApp();
         books = new String[] {"Life of Pi", "Dune", "The Hobbit", "Tom Sawyer", "To Kill a Mockingbird"};
-        displayedBooks = "Life of Pi\nDune\nThe Hobbit\nTom Sawyer\nTo Kill a Mockingbird";
+        displayedBooks = "Life of Pi\nDune\nThe Hobbit\nTom Sawyer\nTo Kill a Mockingbird\n";
     }
 
     @Test

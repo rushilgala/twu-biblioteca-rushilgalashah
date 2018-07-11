@@ -19,6 +19,9 @@ public class BibliotecaApp {
 
     public String displayBooks(String[] books) {
         StringBuilder sb = new StringBuilder();
-        return null;
+        for (String book : books) {
+            sb.append(book + "\n");
+        }
+        return sb.toString();
     }
 }
