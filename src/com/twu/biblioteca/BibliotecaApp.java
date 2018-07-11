@@ -5,7 +5,8 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         System.out.println(bibliotecaApp.welcomeMessage());
-        System.out.println(bibliotecaApp.displayBooks(bibliotecaApp.getBooks()));
+        System.out.println(bibliotecaApp.getMenu());
+        //System.out.println(bibliotecaApp.displayBooks(bibliotecaApp.getBooks()));
     }
 
     public String welcomeMessage() {
@@ -23,11 +24,16 @@ public class BibliotecaApp {
         return books;
     }
 
+
     public String displayBooks(Book[] books) {
         StringBuilder sb = new StringBuilder();
         for (Book book : books) {
             sb.append(book.toString());
         }
         return sb.toString();
+    }
+
+    public String getMenu() {
+        return "L: List Books\n";
     }
 }

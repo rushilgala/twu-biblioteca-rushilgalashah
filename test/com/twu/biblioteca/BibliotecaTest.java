@@ -44,4 +44,10 @@ public class BibliotecaTest {
     public void testDisplayBooks() {
         assertEquals(displayedBooks, bibliotecaApp.displayBooks(books));
     }
+
+    @Test
+    public void testGetMenu() {
+        assertEquals("L: List Books\n", bibliotecaApp.getMenu());
+    }
+
 }
