@@ -18,7 +18,7 @@ public class BibliotecaApp {
     }
 
     public String displayBooks(String[] books) {
-        StringBuilder
+        StringBuilder sb = new StringBuilder();
         return null;
     }
 }
