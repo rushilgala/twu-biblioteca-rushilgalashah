@@ -35,4 +35,9 @@ public class Book {
 	public int getYearPublished() {
 		return this.yearPublished;
 	}
+
+	public String toString() {
+		return String.format("%25s - %20s - %4d\n",
+				this.getTitle(), this.getAuthor(), this.getYearPublished());
+	}
 }

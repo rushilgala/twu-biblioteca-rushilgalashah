@@ -41,4 +41,10 @@ public class BookTest {
 		Book fakeBook = new Book("Life of Pi","Yann Martel", 2018);
 		assertNotEquals(fakeBook, book);
 	}
+
+	@Test
+	public void testStringOutput() {
+		String displayedBook = "               Life of Pi -          Yann Martel - 2001\n";
+		assertEquals(displayedBook, book.toString());
+	}
 }

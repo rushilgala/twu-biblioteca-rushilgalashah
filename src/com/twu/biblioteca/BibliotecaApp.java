@@ -26,9 +26,7 @@ public class BibliotecaApp {
     public String displayBooks(Book[] books) {
         StringBuilder sb = new StringBuilder();
         for (Book book : books) {
-            sb.append(String.format("%25s - %20s - %4d",
-                book.getTitle(), book.getAuthor(), book.getYearPublished()));
-            sb.append("\n");
+            sb.append(book.toString());
         }
         return sb.toString();
     }
