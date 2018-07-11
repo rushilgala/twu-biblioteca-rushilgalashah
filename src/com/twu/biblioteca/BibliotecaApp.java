@@ -12,6 +12,7 @@ public class BibliotecaApp {
     }
 
     public String[] getBooks() {
-        return null;
+        String[] books = new String[] {"Life of Pi", "Dune", "The Hobbit", "Tom Sawyer", "To Kill a Mockingbird"};
+        return books;
     }
 }
