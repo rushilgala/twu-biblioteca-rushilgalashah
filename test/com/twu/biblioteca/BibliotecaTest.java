@@ -1,8 +1,13 @@
 package com.twu.biblioteca;
 
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -12,10 +17,12 @@ public class BibliotecaTest {
     private BibliotecaApp bibliotecaApp;
     private Book[] books;
     private String displayedBooks;
+    private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
     @Before
     public void setUp() {
         bibliotecaApp = new BibliotecaApp();
+        System.setOut(new PrintStream(outputStream));
         books = new Book[] {
             new Book("Life of Pi", "Yann Martel", 2001),
             new Book("Dune", "Frank Herbert", 1965),
@@ -28,6 +35,11 @@ public class BibliotecaTest {
             "               The Hobbit -     J. R. R. Tolkien - 1937\n" +
             "               Tom Sawyer -           Mark Twain - 1876\n" +
             "    To Kill a Mockingbird -           Harper Lee - 1960\n";
+    }
+
+    @After
+    public void restore() {
+        System.setOut(System.out);
     }
 
     @Test
@@ -50,4 +62,35 @@ public class BibliotecaTest {
         assertEquals("L: List Books\n", bibliotecaApp.getMenu());
     }
 
+    @Test
+    public void testWelcomeMessageAndMenuAreInitiallyDisplayed() {
+        bibliotecaApp.displayInitialScreen(bibliotecaApp);
+        String expected = "Welcome to Biblioteca!\n\nMenu\nL: List Books\n\n";
+        assertEquals(expected, outputStream.toString());
+    }
+
+    @Test
+    public void testEnterUpperCaseLToDisplayBooks() {
+        ByteArrayInputStream in = new ByteArrayInputStream("L".getBytes());
+        System.setIn(in);
+        bibliotecaApp.chooseOption(bibliotecaApp);
+        assertEquals(displayedBooks, outputStream.toString());
+    }
+
+    @Test
+    public void testEnterLowerCaseLToDisplayBooks() {
+        ByteArrayInputStream in = new ByteArrayInputStream("l".getBytes());
+        System.setIn(in);
+        bibliotecaApp.chooseOption(bibliotecaApp);
+        assertEquals(displayedBooks, outputStream.toString());
+    }
+
+
+    @Test
+    public void testEnterListBooksToDisplayBooks() {
+        ByteArrayInputStream in = new ByteArrayInputStream("List books".getBytes());
+        System.setIn(in);
+        bibliotecaApp.chooseOption(bibliotecaApp);
+        assertEquals(displayedBooks, outputStream.toString());
+    }
 }

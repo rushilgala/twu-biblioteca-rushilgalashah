@@ -1,12 +1,13 @@
 package com.twu.biblioteca;
 
+import java.util.Scanner;
+
 public class BibliotecaApp {
 
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
-        System.out.println(bibliotecaApp.welcomeMessage());
-        System.out.println(bibliotecaApp.getMenu());
-        //System.out.println(bibliotecaApp.displayBooks(bibliotecaApp.getBooks()));
+        bibliotecaApp.displayInitialScreen(bibliotecaApp);
+        bibliotecaApp.chooseOption(bibliotecaApp);
     }
 
     public String welcomeMessage() {
@@ -24,6 +25,11 @@ public class BibliotecaApp {
         return books;
     }
 
+    public void displayInitialScreen(BibliotecaApp bibliotecaApp) {
+        System.out.println(bibliotecaApp.welcomeMessage() + "\n");
+        System.out.println("Menu");
+        System.out.println(bibliotecaApp.getMenu());
+    }
 
     public String displayBooks(Book[] books) {
         StringBuilder sb = new StringBuilder();
@@ -35,5 +41,13 @@ public class BibliotecaApp {
 
     public String getMenu() {
         return "L: List Books\n";
+    }
+
+    public void chooseOption(BibliotecaApp bibliotecaApp) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine().substring(0, 1).toUpperCase();
+        if (input.equals("L")) {
+            System.out.print(bibliotecaApp.displayBooks(bibliotecaApp.getBooks()));
+        }
     }
 }
