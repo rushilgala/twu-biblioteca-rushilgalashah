@@ -5,6 +5,7 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         System.out.println(bibliotecaApp.welcomeMessage());
+        System.out.println(bibliotecaApp.displayBooks(bibliotecaApp.getBooks()));
     }
 
     public String welcomeMessage() {
@@ -17,6 +18,7 @@ public class BibliotecaApp {
     }
 
     public String displayBooks(String[] books) {
+        StringBuilder
         return null;
     }
 }
