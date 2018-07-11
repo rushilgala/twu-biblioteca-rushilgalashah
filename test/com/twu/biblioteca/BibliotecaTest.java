@@ -71,7 +71,7 @@ public class BibliotecaTest {
 
     @Test
     public void testEnterUpperCaseLToDisplayBooks() {
-        ByteArrayInputStream in = new ByteArrayInputStream("L".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("L\nQ\n".getBytes());
         System.setIn(in);
         bibliotecaApp.chooseOption(bibliotecaApp);
         assertEquals(displayedBooks, outputStream.toString());
@@ -79,7 +79,7 @@ public class BibliotecaTest {
 
     @Test
     public void testEnterLowerCaseLToDisplayBooks() {
-        ByteArrayInputStream in = new ByteArrayInputStream("l".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("l\nQ\n".getBytes());
         System.setIn(in);
         bibliotecaApp.chooseOption(bibliotecaApp);
         assertEquals(displayedBooks, outputStream.toString());
@@ -88,9 +88,19 @@ public class BibliotecaTest {
 
     @Test
     public void testEnterListBooksToDisplayBooks() {
-        ByteArrayInputStream in = new ByteArrayInputStream("List books".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("List books\nQ\n".getBytes());
         System.setIn(in);
         bibliotecaApp.chooseOption(bibliotecaApp);
         assertEquals(displayedBooks, outputStream.toString());
     }
+
+    @Test
+    public void testEnterQToExit() {
+        ByteArrayInputStream in = new ByteArrayInputStream("Q".getBytes());
+        System.setIn(in);
+        bibliotecaApp.chooseOption(bibliotecaApp);
+        assertEquals("", outputStream.toString());
+    }
+
+
 }

@@ -46,8 +46,11 @@ public class BibliotecaApp {
     public void chooseOption(BibliotecaApp bibliotecaApp) {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine().substring(0, 1).toUpperCase();
-        if (input.equals("L")) {
-            System.out.print(bibliotecaApp.displayBooks(bibliotecaApp.getBooks()));
+        while (!input.equals("Q")) {
+            if (input.equals("L")) {
+                System.out.print(bibliotecaApp.displayBooks(bibliotecaApp.getBooks()));
+            }
+            input = sc.nextLine().substring(0, 1).toUpperCase();
         }
     }
 }
