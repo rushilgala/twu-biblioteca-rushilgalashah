@@ -9,8 +9,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class BibliotecaTest {
 
@@ -24,11 +23,11 @@ public class BibliotecaTest {
         bibliotecaApp = new BibliotecaApp();
         System.setOut(new PrintStream(outputStream));
         books = new Book[] {
-            new Book("Life of Pi", "Yann Martel", 2001),
-            new Book("Dune", "Frank Herbert", 1965),
-            new Book("The Hobbit", "J. R. R. Tolkien", 1937),
-            new Book("Tom Sawyer", "Mark Twain", 1876),
-            new Book("To Kill a Mockingbird", "Harper Lee", 1960)
+            new Book("Life of Pi", "Yann Martel", 2001,false),
+            new Book("Dune", "Frank Herbert", 1965,false),
+            new Book("The Hobbit", "J. R. R. Tolkien", 1937,false),
+            new Book("Tom Sawyer", "Mark Twain", 1876,false),
+            new Book("To Kill a Mockingbird", "Harper Lee", 1960,false)
         };
         displayedBooks = "               Life of Pi -          Yann Martel - 2001\n" +
             "                     Dune -        Frank Herbert - 1965\n" +
@@ -59,13 +58,13 @@ public class BibliotecaTest {
 
     @Test
     public void testGetMenu() {
-        assertEquals("L: List Books\n", bibliotecaApp.getMenu());
+        assertEquals("L - List Books\nC - Checkout Book\nQ - Quit\n", bibliotecaApp.getMenu());
     }
 
     @Test
     public void testWelcomeMessageAndMenuAreInitiallyDisplayed() {
         bibliotecaApp.displayInitialScreen(bibliotecaApp);
-        String expected = "Welcome to Biblioteca!\n\nMenu\nL: List Books\n\n";
+        String expected = "Welcome to Biblioteca!\n\nMenu\nL - List Books\nC - Checkout Book\nQ - Quit\n\n";
         assertEquals(expected, outputStream.toString());
     }
 
@@ -103,12 +102,37 @@ public class BibliotecaTest {
     }
 
     @Test
+    public void testBookDoesNotAppearAfterCheckedOut() {
+        ByteArrayInputStream in = new ByteArrayInputStream("C\nDune\nL\nQ\n".getBytes());
+        System.setIn(in);
+        bibliotecaApp.chooseOption(bibliotecaApp);
+        assertFalse(outputStream.toString().contains("Dune"));
+    }
+
+    @Test
+    public void testBookIsMisspelledReturnsNotAvailable() {
+        ByteArrayInputStream in = new ByteArrayInputStream("C\nDupe\nL\nQ\n".getBytes());
+        System.setIn(in);
+        bibliotecaApp.chooseOption(bibliotecaApp);
+        assertTrue(outputStream.toString().contains("That book is not available."));
+    }
+
+
+    @Test
+    public void testCheckoutMessageOnSuccessfulCheckout() {
+        ByteArrayInputStream in = new ByteArrayInputStream("C\nDune\nQ\n".getBytes());
+        System.setIn(in);
+        bibliotecaApp.chooseOption(bibliotecaApp);
+        assertTrue(outputStream.toString().contains("Thank you! Enjoy the book"));
+        assertFalse(outputStream.toString().contains("That book is not available."));
+    }
+
+    @Test
     public void testInvalidOption() {
         ByteArrayInputStream in = new ByteArrayInputStream("B\nQ\n".getBytes());
         System.setIn(in);
         bibliotecaApp.chooseOption(bibliotecaApp);
         assertEquals("Select a valid option!\n", outputStream.toString());
     }
-
 
 }

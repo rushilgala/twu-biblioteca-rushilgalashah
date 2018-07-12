@@ -1,10 +1,19 @@
 package com.twu.biblioteca;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BibliotecaApp {
 
-    public static void main(String[] args) {
+    private Book[] books = new Book[] {
+		    new Book("Life of Pi", "Yann Martel", 2001,false),
+		    new Book("Dune", "Frank Herbert", 1965,false),
+		    new Book("The Hobbit", "J. R. R. Tolkien", 1937,false),
+		    new Book("Tom Sawyer", "Mark Twain", 1876,false),
+		    new Book("To Kill a Mockingbird", "Harper Lee", 1960,false)
+    };
+
+	public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         bibliotecaApp.displayInitialScreen(bibliotecaApp);
         bibliotecaApp.chooseOption(bibliotecaApp);
@@ -15,13 +24,6 @@ public class BibliotecaApp {
     }
 
     public Book[] getBooks() {
-        Book[] books = new Book[] {
-            new Book("Life of Pi", "Yann Martel", 2001),
-            new Book("Dune", "Frank Herbert", 1965),
-            new Book("The Hobbit", "J. R. R. Tolkien", 1937),
-            new Book("Tom Sawyer", "Mark Twain", 1876),
-            new Book("To Kill a Mockingbird", "Harper Lee", 1960)
-        };
         return books;
     }
 
@@ -34,13 +36,15 @@ public class BibliotecaApp {
     public String displayBooks(Book[] books) {
         StringBuilder sb = new StringBuilder();
         for (Book book : books) {
-            sb.append(book.toString());
+        	if (!book.getLoanStatus()) {
+		        sb.append(book.toString());
+	        }
         }
         return sb.toString();
     }
 
     public String getMenu() {
-        return "L: List Books\n";
+        return "L - List Books\nC - Checkout Book\nQ - Quit\n";
     }
 
     public void chooseOption(BibliotecaApp bibliotecaApp) {
@@ -49,10 +53,25 @@ public class BibliotecaApp {
         while (!input.equals("Q")) {
             if (input.equals("L")) {
                 System.out.print(bibliotecaApp.displayBooks(bibliotecaApp.getBooks()));
+            } else if (input.equals("C")) {
+            	checkoutBook(sc);
             } else {
             	System.out.println("Select a valid option!");
             }
             input = sc.nextLine().substring(0, 1).toUpperCase();
         }
+    }
+
+    public void checkoutBook(Scanner sc) {
+			System.out.print("Enter the title: ");
+	    String title = sc.nextLine();
+	    for (Book book : getBooks()) {
+		    if (book.getTitle().equals(title)) {
+			    book.setLoanStatus(true);
+			    System.out.println("Thank you! Enjoy the book");
+			    return;
+		    }
+	    }
+	    System.out.println("That book is not available.");
     }
 }

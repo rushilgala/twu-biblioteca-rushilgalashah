@@ -3,8 +3,7 @@ package com.twu.biblioteca;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
 
 public class BookTest {
 
@@ -12,7 +11,7 @@ public class BookTest {
 
 	@Before
 	public void setUp() {
-		book = new Book("Life of Pi","Yann Martel", 2001);
+		book = new Book("Life of Pi","Yann Martel", 2001,false);
 	}
 
 	@Test
@@ -32,14 +31,25 @@ public class BookTest {
 
 	@Test
 	public void testBookIsEqual() {
-		Book sameBook = new Book("Life of Pi", "Yann Martel", 2001);
+		Book sameBook = new Book("Life of Pi", "Yann Martel", 2001, false);
 		assertEquals(sameBook, book);
 	}
 
 	@Test
 	public void testFakeBookDifferentYearIsNotEqual() {
-		Book fakeBook = new Book("Life of Pi","Yann Martel", 2018);
+		Book fakeBook = new Book("Life of Pi","Yann Martel", 2018, false);
 		assertNotEquals(fakeBook, book);
+	}
+
+	@Test
+	public void testBookIsNotOnLoanInitially() {
+		assertFalse(book.getLoanStatus());
+	}
+
+	@Test
+	public void testBookStatusIsChanged() {
+		book.setLoanStatus(true);
+		assertTrue(book.getLoanStatus());
 	}
 
 	@Test
