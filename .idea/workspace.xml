@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c416742c-b4d5-4837-814b-d2dcf6ec813f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BibliotecaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BibliotecaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BookTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BookTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="c416742c-b4d5-4837-814b-d2dcf6ec813f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,7 +14,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="225">
-          <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="447">
@@ -45,7 +35,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BibliotecaTest.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="BibliotecaTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="184">
@@ -61,8 +51,8 @@
           <file leaf-file-name="BibliotecaTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="352">
-                  <caret line="115" column="49" selection-start-line="115" selection-start-column="22" selection-end-line="115" selection-end-column="49" />
+                <state relative-caret-position="324">
+                  <caret line="125" column="78" selection-start-line="125" selection-start-column="78" selection-end-line="125" selection-end-column="78" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -553,28 +543,17 @@
       <option name="project" value="LOCAL" />
       <updated>1531371202000</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added checkout, successful checkout and unsuccessful checkout">
+      <created>1531407062739</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1531407062739</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BibliotecaTest - 2018.07.12 at 06h 48m 18s.xml">
-      <configuration name="BibliotecaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaTest - 2018.07.12 at 06h 48m 49s.xml">
-      <configuration name="BibliotecaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaTest - 2018.07.12 at 06h 49m 20s.xml">
-      <configuration name="BibliotecaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaTest - 2018.07.12 at 15h 33m 04s.xml">
-      <configuration name="BibliotecaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaTest - 2018.07.12 at 15h 33m 27s.xml">
-      <configuration name="BibliotecaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaTest - 2018.07.12 at 15h 36m 11s.xml">
-      <configuration name="BibliotecaTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BibliotecaTest - 2018.07.12 at 15h 37m 31s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
@@ -585,6 +564,24 @@
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="BibliotecaTest - 2018.07.12 at 15h 45m 06s.xml">
+      <configuration name="BibliotecaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest - 2018.07.12 at 15h 47m 24s.xml">
+      <configuration name="BibliotecaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest - 2018.07.12 at 15h 48m 36s.xml">
+      <configuration name="BibliotecaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest_testCheckoutMessageOnSuccessfulCheckout - 2018.07.12 at 15h 48m 48s.xml">
+      <configuration name="BibliotecaTest.testCheckoutMessageOnSuccessfulCheckout" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest_testCheckoutMessageOnSuccessfulCheckout - 2018.07.12 at 15h 48m 53s.xml">
+      <configuration name="BibliotecaTest.testCheckoutMessageOnSuccessfulCheckout" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest_testCheckoutMessageOnSuccessfulCheckout - 2018.07.12 at 15h 49m 16s.xml">
+      <configuration name="BibliotecaTest.testCheckoutMessageOnSuccessfulCheckout" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaTest - 2018.07.12 at 15h 49m 50s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -598,20 +595,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="20" width="1920" height="1060" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49840596" weight="0.32883817" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.4968119" visible="true" weight="0.32883817" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4968119" weight="0.32883817" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50265676" side_tool="true" weight="0.25339368" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5031881" side_tool="true" visible="true" weight="0.32883817" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.50265676" side_tool="true" weight="0.32883817" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32918552" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4978746" weight="0.32918552" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49734324" visible="true" weight="0.32838982" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12911797" />
@@ -620,7 +616,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39932126" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946865" weight="0.39834026" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -680,7 +676,8 @@
     <MESSAGE value="Implemented Q option to quit" />
     <MESSAGE value="Implemented not a valid option for anything other than Q and L" />
     <MESSAGE value="Project updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project updated" />
+    <MESSAGE value="Added checkout, successful checkout and unsuccessful checkout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checkout, successful checkout and unsuccessful checkout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -830,8 +827,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="115" column="49" selection-start-line="115" selection-start-column="22" selection-end-line="115" selection-end-column="49" />
+        <state relative-caret-position="324">
+          <caret line="125" column="78" selection-start-line="125" selection-start-column="78" selection-end-line="125" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
