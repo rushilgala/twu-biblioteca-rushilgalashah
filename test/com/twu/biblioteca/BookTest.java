@@ -53,6 +53,12 @@ public class BookTest {
 	}
 
 	@Test
+	public void testBookWithNoLoanStatusIsNotCheckedOut() {
+		Book noLoan = new Book("Life of Pi","Yann Martel",2001);
+		assertFalse(noLoan.getLoanStatus());
+	}
+
+	@Test
 	public void testStringOutput() {
 		String displayedBook = "               Life of Pi -          Yann Martel - 2001\n";
 		assertEquals(displayedBook, book.toString());

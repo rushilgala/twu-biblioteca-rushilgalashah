@@ -42,6 +42,15 @@ public class BibliotecaTest {
     }
 
     @Test
+    public void testMainMethod() {
+        ByteArrayInputStream in = new ByteArrayInputStream("Q\n".getBytes());
+        System.setIn(in);
+        bibliotecaApp.main(null);
+        String expected = "Welcome to Biblioteca!\n\nMenu\nL - List Books\nC - Checkout Book\nQ - Quit\n\n";
+        assertEquals(expected, outputStream.toString());
+    }
+
+    @Test
     public void testWelcomeMessage() {
         assertEquals("Welcome to Biblioteca!", bibliotecaApp.welcomeMessage());
     }
