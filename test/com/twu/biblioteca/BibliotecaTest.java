@@ -46,7 +46,7 @@ public class BibliotecaTest {
         ByteArrayInputStream in = new ByteArrayInputStream("Q\n".getBytes());
         System.setIn(in);
         bibliotecaApp.main(null);
-        String expected = "Welcome to Biblioteca!\n\nMenu\nL - List Books\nC - Checkout Book\nQ - Quit\n\n";
+        String expected = "Welcome to Biblioteca!\n\nMenu\nL - List Books\nC - Checkout Book\nR - Return Book\nQ - Quit\n\n";
         assertEquals(expected, outputStream.toString());
     }
 
@@ -67,13 +67,13 @@ public class BibliotecaTest {
 
     @Test
     public void testGetMenu() {
-        assertEquals("L - List Books\nC - Checkout Book\nQ - Quit\n", bibliotecaApp.getMenu());
+        assertEquals("L - List Books\nC - Checkout Book\nR - Return Book\nQ - Quit\n", bibliotecaApp.getMenu());
     }
 
     @Test
     public void testWelcomeMessageAndMenuAreInitiallyDisplayed() {
         bibliotecaApp.displayInitialScreen(bibliotecaApp);
-        String expected = "Welcome to Biblioteca!\n\nMenu\nL - List Books\nC - Checkout Book\nQ - Quit\n\n";
+        String expected = "Welcome to Biblioteca!\n\nMenu\nL - List Books\nC - Checkout Book\nR - Return Book\nQ - Quit\n\n";
         assertEquals(expected, outputStream.toString());
     }
 
@@ -134,6 +134,32 @@ public class BibliotecaTest {
         bibliotecaApp.chooseOption(bibliotecaApp);
         assertTrue(outputStream.toString().contains("Thank you! Enjoy the book"));
         assertFalse(outputStream.toString().contains("That book is not available."));
+    }
+
+    @Test
+    public void testReturnedBookAppearsOnList() {
+        ByteArrayInputStream in = new ByteArrayInputStream("C\nDune\nR\nDune\nL\nQ\n".getBytes());
+        System.setIn(in);
+        bibliotecaApp.chooseOption(bibliotecaApp);
+        assertTrue(outputStream.toString().contains("Dune"));
+    }
+
+
+    @Test
+    public void testReturnMessageOnSuccessfulReturn() {
+        ByteArrayInputStream in = new ByteArrayInputStream("C\nDune\nR\nDune\nQ\n".getBytes());
+        System.setIn(in);
+        bibliotecaApp.chooseOption(bibliotecaApp);
+        assertTrue(outputStream.toString().contains("Thank you for returning the book."));
+        assertFalse(outputStream.toString().contains("That is not a valid book to return."));
+    }
+
+    @Test
+    public void testReturnMessageOnUnsuccessfulReturn() {
+        ByteArrayInputStream in = new ByteArrayInputStream("C\nDupe\nR\nDupe\nQ\n".getBytes());
+        System.setIn(in);
+        bibliotecaApp.chooseOption(bibliotecaApp);
+        assertTrue(outputStream.toString().contains("That is not a valid book to return."));
     }
 
     @Test

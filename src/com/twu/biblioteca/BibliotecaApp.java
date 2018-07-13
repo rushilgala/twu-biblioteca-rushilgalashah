@@ -44,7 +44,7 @@ public class BibliotecaApp {
     }
 
     public String getMenu() {
-        return "L - List Books\nC - Checkout Book\nQ - Quit\n";
+        return "L - List Books\nC - Checkout Book\nR - Return Book\nQ - Quit\n";
     }
 
     public void chooseOption(BibliotecaApp bibliotecaApp) {
@@ -54,7 +54,9 @@ public class BibliotecaApp {
             if (input.equals("L")) {
                 System.out.print(bibliotecaApp.displayBooks(bibliotecaApp.getBooks()));
             } else if (input.equals("C")) {
-            	checkoutBook(sc);
+	            checkoutBook(sc);
+            } else if (input.equals("R")) {
+            	returnBook(sc);
             } else {
             	System.out.println("Select a valid option!");
             }
@@ -62,7 +64,20 @@ public class BibliotecaApp {
         }
     }
 
-    public void checkoutBook(Scanner sc) {
+	private void returnBook(Scanner sc) {
+		System.out.print("Enter the title: ");
+		String title = sc.nextLine();
+		for (Book book : getBooks()) {
+			if (book.getTitle().equals(title)) {
+				book.setLoanStatus(false);
+				System.out.println("Thank you for returning the book.");
+				return;
+			}
+		}
+		System.out.println("That is not a valid book to return.");
+	}
+
+	public void checkoutBook(Scanner sc) {
 			System.out.print("Enter the title: ");
 	    String title = sc.nextLine();
 	    for (Book book : getBooks()) {
