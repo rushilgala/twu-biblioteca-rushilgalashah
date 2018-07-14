@@ -4,32 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/com/twu/biblioteca/commands/ReturnCommand.java" line="22" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c416742c-b4d5-4837-814b-d2dcf6ec813f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/commands/CheckoutCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/commands/CheckoutCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/commands/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/commands/Command.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/commands/ListCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/commands/ListCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/commands/ReturnCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/commands/ReturnCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BibliotecaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BibliotecaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/MenuTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/MenuTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/commands/CheckoutCommandTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/commands/CheckoutCommandTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/commands/CommandTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/commands/CommandTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/commands/ListCommandTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/commands/ListCommandTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/commands/ReturnCommandTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/commands/ReturnCommandTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/commands/CheckoutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/commands/CheckoutCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/commands/ListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/commands/ListCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/commands/ReturnCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/commands/ReturnCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/MenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/MenuTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/commands/CommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/commands/CommandTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/commands/ListCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/commands/ListCommandTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/commands/ReturnCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/commands/ReturnCommandTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="c416742c-b4d5-4837-814b-d2dcf6ec813f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,11 +20,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.4978746">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="225">
-          <file leaf-file-name="BibliotecaTest.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="BibliotecaTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="206">
-                  <caret line="76" selection-start-line="76" selection-end-line="76" />
+                <state relative-caret-position="198">
+                  <caret line="97" selection-start-line="97" selection-end-line="97" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -91,7 +66,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="350">
@@ -120,8 +95,8 @@
           <file leaf-file-name="BibliotecaTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="321">
-                  <caret line="109" column="25" lean-forward="true" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
+                <state relative-caret-position="503">
+                  <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -184,18 +159,18 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/commands/CheckoutCommand.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/MenuTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/commands/ReturnCommandTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/commands/ReturnCommand.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
-    <option name="y" value="20" />
-    <option name="width" value="960" />
-    <option name="height" value="1000" />
+    <option name="x" value="233" />
+    <option name="y" value="73" />
+    <option name="width" value="930" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -644,22 +619,17 @@
       <option name="project" value="LOCAL" />
       <updated>1531535736976</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Refactored the code to remove duplicate code">
+      <created>1531540737407</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1531540737407</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_biblioteca - 2018.07.14 at 04h 46m 22s.xml">
-      <configuration name="All in biblioteca" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_biblioteca - 2018.07.14 at 04h 46m 55s.xml">
-      <configuration name="All in biblioteca" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_biblioteca - 2018.07.14 at 04h 47m 09s.xml">
-      <configuration name="All in biblioteca" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_biblioteca - 2018.07.14 at 04h 47m 16s.xml">
-      <configuration name="All in biblioteca" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_biblioteca - 2018.07.14 at 04h 47m 28s.xml">
       <configuration name="All in biblioteca" configurationId="JUnit" />
     </history-entry>
@@ -676,6 +646,18 @@
       <configuration name="All in biblioteca" configurationId="JUnit" />
     </history-entry>
     <history-entry file="All_in_biblioteca - 2018.07.14 at 04h 53m 42s.xml">
+      <configuration name="All in biblioteca" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_biblioteca - 2018.07.14 at 04h 56m 21s.xml">
+      <configuration name="All in biblioteca" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_biblioteca - 2018.07.14 at 04h 57m 02s.xml">
+      <configuration name="All in biblioteca" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_biblioteca - 2018.07.14 at 04h 57m 48s.xml">
+      <configuration name="All in biblioteca" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_biblioteca - 2018.07.14 at 04h 58m 19s.xml">
       <configuration name="All in biblioteca" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -698,15 +680,15 @@
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50265676" side_tool="true" weight="0.25339368" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.5031881" side_tool="true" visible="true" weight="0.3280543" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5095643" side_tool="true" visible="true" weight="0.39819005" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5031881" side_tool="true" weight="0.3280543" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49840596" weight="0.32918552" />
       <window_info anchor="bottom" x="14" y="419" width="1892" height="213" id="Coverage" order="11" sideWeight="0.5074389" side_tool="true" weight="0.3280543" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49734324" weight="0.3280543" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4968119" visible="true" weight="0.3280543" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20935175" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.20935175" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -778,7 +760,8 @@
     <MESSAGE value="Added book returns, successful and unsuccessful messages" />
     <MESSAGE value="Refactored the commands" />
     <MESSAGE value="Added a check to see if the book is already checked out." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a check to see if the book is already checked out." />
+    <MESSAGE value="Refactored the code to remove duplicate code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored the code to remove duplicate code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1084,20 +1067,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
