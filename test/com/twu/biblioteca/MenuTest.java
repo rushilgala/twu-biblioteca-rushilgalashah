@@ -49,7 +49,7 @@ public class MenuTest {
 
 	@Test
 	public void testGetMenu() {
-		assertEquals("L - List Books\nC - Checkout Book\nR - Return Book\nQ - Quit\n", menu.getMenu());
+		assertEquals("L - List Books\nC - Checkout Book\nR - Return Book\nM - List Movies\nO - Checkout Movie\nQ - Quit\n", menu.getMenu());
 	}
 
 	@Test

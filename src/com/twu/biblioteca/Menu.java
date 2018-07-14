@@ -40,6 +40,8 @@ public class Menu {
 		commands.put("L",new ListCommand("L", "List Books"));
 		commands.put("C",new CheckoutCommand("C", "Checkout Book"));
 		commands.put("R",new ReturnCommand("R", "Return Book"));
+		commands.put("M",new ReturnCommand("M", "List Movies"));
+		commands.put("O",new ReturnCommand("O", "Checkout Movie"));
 		commands.put("Q",new Command("Q", "Quit"));
 	}
 
@@ -55,8 +57,8 @@ public class Menu {
 		return new Scanner(System.in).nextLine();
 	}
 
-	public static String executeCommand(String command, Book[] books) {
+	public static String executeCommand(String command, Media[] media) {
 		Command executeCommand = commands.get(command);
-		return executeCommand.execute(books);
+		return executeCommand.execute(media);
 	}
 }
