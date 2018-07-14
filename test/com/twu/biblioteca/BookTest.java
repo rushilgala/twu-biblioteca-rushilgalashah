@@ -21,41 +21,12 @@ public class BookTest {
 
 	@Test
 	public void testGetAuthor() {
-		assertEquals("Yann Martel", book.getAuthor());
+		assertEquals("Yann Martel", book.getWriter());
 	}
 
 	@Test
 	public void testGetYearPublished() {
 		assertEquals(2001, book.getYearPublished());
-	}
-
-	@Test
-	public void testBookIsEqual() {
-		Book sameBook = new Book("Life of Pi", "Yann Martel", 2001, false);
-		assertEquals(sameBook, book);
-	}
-
-	@Test
-	public void testFakeBookDifferentYearIsNotEqual() {
-		Book fakeBook = new Book("Life of Pi","Yann Martel", 2018, false);
-		assertNotEquals(fakeBook, book);
-	}
-
-	@Test
-	public void testBookIsNotOnLoanInitially() {
-		assertFalse(book.getLoanStatus());
-	}
-
-	@Test
-	public void testBookStatusIsChanged() {
-		book.setLoanStatus(true);
-		assertTrue(book.getLoanStatus());
-	}
-
-	@Test
-	public void testBookWithNoLoanStatusIsNotCheckedOut() {
-		Book noLoan = new Book("Life of Pi","Yann Martel",2001);
-		assertFalse(noLoan.getLoanStatus());
 	}
 
 	@Test
