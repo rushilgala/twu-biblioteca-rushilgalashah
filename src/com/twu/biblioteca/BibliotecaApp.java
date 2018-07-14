@@ -29,11 +29,10 @@ public class BibliotecaApp {
 
 
     public void chooseOption() {
-				Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine(); // Menu.enterCommand();
+				String input =  Menu.enterCommand();
         while (!input.equals("Q")) {
 	        analyseUserInput(input);
-          input = sc.nextLine();
+          input = Menu.enterCommand();
         }
     }
 
