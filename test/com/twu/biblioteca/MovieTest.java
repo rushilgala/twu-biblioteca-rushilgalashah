@@ -3,9 +3,7 @@ package com.twu.biblioteca;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
 public class MovieTest {
 
@@ -41,4 +39,11 @@ public class MovieTest {
 		String displayedMovie = "                 Life of Brian - 1979 -          Terry Jones - 9\n";
 		assertEquals(displayedMovie, movie.toString());
 	}
+
+	@Test
+	public void testNewMovieWithNoRating() {
+		Movie noRatingMovie = new Movie("Life of Brian",1979,"Terry Jones",-1,false);
+		assertEquals(-1, noRatingMovie.getMovieRating());
+	}
+
 }
