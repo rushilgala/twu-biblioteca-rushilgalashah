@@ -1,6 +1,9 @@
 package com.twu.biblioteca;
 
-import java.util.Arrays;
+import com.twu.biblioteca.commands.CheckoutCommand;
+import com.twu.biblioteca.commands.ListCommand;
+import com.twu.biblioteca.commands.ReturnCommand;
+
 import java.util.Scanner;
 
 public class BibliotecaApp {
@@ -15,8 +18,8 @@ public class BibliotecaApp {
 
 	public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
-        bibliotecaApp.displayInitialScreen(bibliotecaApp);
-        bibliotecaApp.chooseOption(bibliotecaApp);
+        bibliotecaApp.displayInitialScreen();
+        bibliotecaApp.chooseOption();
     }
 
     public String welcomeMessage() {
@@ -27,36 +30,26 @@ public class BibliotecaApp {
         return books;
     }
 
-    public void displayInitialScreen(BibliotecaApp bibliotecaApp) {
-        System.out.println(bibliotecaApp.welcomeMessage() + "\n");
+    public void displayInitialScreen() {
+        System.out.println(welcomeMessage() + "\n");
         System.out.println("Menu");
-        System.out.println(bibliotecaApp.getMenu());
-    }
-
-    public String displayBooks(Book[] books) {
-        StringBuilder sb = new StringBuilder();
-        for (Book book : books) {
-        	if (!book.getLoanStatus()) {
-		        sb.append(book.toString());
-	        }
-        }
-        return sb.toString();
+        System.out.println(getMenu());
     }
 
     public String getMenu() {
         return "L - List Books\nC - Checkout Book\nR - Return Book\nQ - Quit\n";
     }
 
-    public void chooseOption(BibliotecaApp bibliotecaApp) {
+    public void chooseOption() {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine().substring(0, 1).toUpperCase();
         while (!input.equals("Q")) {
             if (input.equals("L")) {
-                System.out.print(bibliotecaApp.displayBooks(bibliotecaApp.getBooks()));
+                System.out.print(new ListCommand().execute(getBooks()));
             } else if (input.equals("C")) {
-	            checkoutBook(sc);
+	            System.out.println(new CheckoutCommand().execute(getBooks()));
             } else if (input.equals("R")) {
-            	returnBook(sc);
+	            System.out.println(new ReturnCommand().execute(getBooks()));
             } else {
             	System.out.println("Select a valid option!");
             }
@@ -64,29 +57,5 @@ public class BibliotecaApp {
         }
     }
 
-	private void returnBook(Scanner sc) {
-		System.out.print("Enter the title: ");
-		String title = sc.nextLine();
-		for (Book book : getBooks()) {
-			if (book.getTitle().equals(title)) {
-				book.setLoanStatus(false);
-				System.out.println("Thank you for returning the book.");
-				return;
-			}
-		}
-		System.out.println("That is not a valid book to return.");
-	}
 
-	public void checkoutBook(Scanner sc) {
-			System.out.print("Enter the title: ");
-	    String title = sc.nextLine();
-	    for (Book book : getBooks()) {
-		    if (book.getTitle().equals(title)) {
-			    book.setLoanStatus(true);
-			    System.out.println("Thank you! Enjoy the book");
-			    return;
-		    }
-	    }
-	    System.out.println("That book is not available.");
-    }
 }
