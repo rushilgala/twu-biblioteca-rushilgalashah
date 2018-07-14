@@ -1,6 +1,7 @@
 package com.twu.biblioteca.commands;
 
 import com.twu.biblioteca.Book;
+import com.twu.biblioteca.Media;
 
 public class ListCommand extends Command {
 
@@ -9,11 +10,11 @@ public class ListCommand extends Command {
 	}
 
 	@Override
-	public String execute(Book[] books) {
+	public String execute(Media[] mediaObjects) {
 		StringBuilder sb = new StringBuilder();
-		for (Book book : books) {
-			if (!book.getLoanStatus()) {
-				sb.append(book.toString());
+		for (Media media : mediaObjects) {
+			if (!media.getLoanStatus()) {
+				sb.append(media.toString());
 			}
 		}
 		return sb.toString();

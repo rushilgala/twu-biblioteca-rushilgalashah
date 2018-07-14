@@ -1,6 +1,7 @@
 package com.twu.biblioteca.commands;
 
 import com.twu.biblioteca.Book;
+import com.twu.biblioteca.Media;
 
 public class Command {
 	protected String command;
@@ -11,7 +12,7 @@ public class Command {
 		this.description = description;
 	}
 
-	public String execute(Book[] books) {
+	public String execute(Media[] mediaObjects) {
 		return null;
 	}
 

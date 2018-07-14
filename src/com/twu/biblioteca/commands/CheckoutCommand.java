@@ -1,6 +1,7 @@
 package com.twu.biblioteca.commands;
 
 import com.twu.biblioteca.Book;
+import com.twu.biblioteca.Media;
 import com.twu.biblioteca.Menu;
 
 public class CheckoutCommand extends Command {
@@ -10,12 +11,12 @@ public class CheckoutCommand extends Command {
 	}
 
 	@Override
-	public String execute(Book[] books) {
+	public String execute(Media[] mediaObjects) {
 		System.out.print("Enter the title: ");
 		String title = Menu.userInput();
-		for (Book book : books) {
-			if (book.getTitle().equals(title) && !book.getLoanStatus()) {
-				book.setLoanStatus(true);
+		for (Media media : mediaObjects) {
+			if (media.getTitle().equals(title) && !media.getLoanStatus()) {
+				media.setLoanStatus(true);
 				return "Thank you! Enjoy the book";
 			}
 		}
