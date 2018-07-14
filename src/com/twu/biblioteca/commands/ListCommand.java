@@ -4,6 +4,10 @@ import com.twu.biblioteca.Book;
 
 public class ListCommand extends Command {
 
+	public ListCommand(String command, String description) {
+		super(command, description);
+	}
+
 	@Override
 	public String execute(Book[] books) {
 		StringBuilder sb = new StringBuilder();

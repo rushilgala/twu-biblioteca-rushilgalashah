@@ -1,17 +1,21 @@
 package com.twu.biblioteca.commands;
 
 import com.twu.biblioteca.Book;
+import com.twu.biblioteca.Menu;
 
-import java.util.Scanner;
 
 public class ReturnCommand extends Command {
 
+	public ReturnCommand(String command, String description) {
+		super(command, description);
+	}
+
 	@Override
 	public String execute(Book[] books) {
-		Scanner sc = new Scanner(System.in);
-		String title = sc.nextLine();
+		System.out.print("Enter the title: ");
+		String title = Menu.userInput();
 		for (Book book : books) {
-			if (book.getTitle().equals(title)) {
+			if (book.getTitle().equals(title) && book.getLoanStatus()) {
 				book.setLoanStatus(false);
 				return "Thank you for returning the book.";
 			}

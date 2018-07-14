@@ -1,8 +1,5 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.commands.CheckoutCommand;
-import com.twu.biblioteca.commands.ListCommand;
-import com.twu.biblioteca.commands.ReturnCommand;
 
 import java.util.Scanner;
 
@@ -22,39 +19,30 @@ public class BibliotecaApp {
         bibliotecaApp.chooseOption();
     }
 
-    public String welcomeMessage() {
-        return "Welcome to Biblioteca!";
-    }
-
     public Book[] getBooks() {
         return books;
     }
 
     public void displayInitialScreen() {
-        System.out.println(welcomeMessage() + "\n");
-        System.out.println("Menu");
-        System.out.println(getMenu());
+			Menu.initialise();
     }
 
-    public String getMenu() {
-        return "L - List Books\nC - Checkout Book\nR - Return Book\nQ - Quit\n";
-    }
 
     public void chooseOption() {
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine().substring(0, 1).toUpperCase();
+				Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine(); // Menu.enterCommand();
         while (!input.equals("Q")) {
-            if (input.equals("L")) {
-                System.out.print(new ListCommand().execute(getBooks()));
-            } else if (input.equals("C")) {
-	            System.out.println(new CheckoutCommand().execute(getBooks()));
-            } else if (input.equals("R")) {
-	            System.out.println(new ReturnCommand().execute(getBooks()));
-            } else {
-            	System.out.println("Select a valid option!");
-            }
-            input = sc.nextLine().substring(0, 1).toUpperCase();
+	        analyseUserInput(input);
+          input = sc.nextLine();
         }
+    }
+
+    public void analyseUserInput(String input) {
+	    if (Menu.checkIfValidOption(input)) {
+		    System.out.println(Menu.executeCommand(input,getBooks()));
+	    } else {
+		    System.out.println("Select a valid option!");
+	    }
     }
 
 

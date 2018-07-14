@@ -5,11 +5,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class ListCommandTest {
@@ -20,7 +18,7 @@ public class ListCommandTest {
 
 	@Before
 	public void setUp() {
-		listCommand = new ListCommand();
+		listCommand = new ListCommand("L","List Books");
 		System.setOut(new PrintStream(outputStream));
 		books = new Book[] {
 				new Book("Life of Pi", "Yann Martel", 2001,false),

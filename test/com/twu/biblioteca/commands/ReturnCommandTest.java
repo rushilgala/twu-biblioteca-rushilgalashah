@@ -24,9 +24,9 @@ public class ReturnCommandTest {
 
 	@Before
 	public void setUp() {
-		returnCommand = new ReturnCommand();
-		listCommand = new ListCommand();
-		checkoutCommand = new CheckoutCommand();
+		returnCommand = new ReturnCommand("R","Return Book");
+		listCommand = new ListCommand("L","List Books");
+		checkoutCommand = new CheckoutCommand("C","Checkout Book");
 		System.setOut(new PrintStream(outputStream));
 		books = new Book[]{
 				new Book("Life of Pi", "Yann Martel", 2001, false),
@@ -71,6 +71,13 @@ public class ReturnCommandTest {
 	@Test
 	public void testReturnMessageOnUnsuccessfulReturn() {
 		ByteArrayInputStream in = new ByteArrayInputStream("Dupe\n".getBytes());
+		System.setIn(in);
+		assertEquals("That is not a valid book to return.",returnCommand.execute(books));
+	}
+
+	@Test
+	public void testReturnOnBookNotLoanedOut() {
+		ByteArrayInputStream in = new ByteArrayInputStream("Life of Pi\n".getBytes());
 		System.setIn(in);
 		assertEquals("That is not a valid book to return.",returnCommand.execute(books));
 	}
