@@ -22,8 +22,8 @@ public class CheckoutCommandTest {
 
 	@Before
 	public void setUp() {
-		checkoutCommand = new CheckoutCommand();
-		listCommand = new ListCommand();
+		checkoutCommand = new CheckoutCommand("C","Checkout Book");
+		listCommand = new ListCommand("L","List Books");
 		System.setOut(new PrintStream(outputStream));
 		books = new Book[]{
 				new Book("Life of Pi", "Yann Martel", 2001, false),
@@ -61,5 +61,13 @@ public class CheckoutCommandTest {
 		ByteArrayInputStream in = new ByteArrayInputStream("Dune\n".getBytes());
 		System.setIn(in);
 		assertEquals("Thank you! Enjoy the book",checkoutCommand.execute(books));
+	}
+
+	@Test
+	public void testCheckoutExistingCheckedoutBookShouldFail() {
+		books[1].setLoanStatus(true);
+		ByteArrayInputStream in = new ByteArrayInputStream("Dune\n".getBytes());
+		System.setIn(in);
+		assertEquals("That book is not available.",checkoutCommand.execute(books));
 	}
 }
