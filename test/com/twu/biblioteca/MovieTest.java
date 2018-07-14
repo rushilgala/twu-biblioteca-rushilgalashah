@@ -38,7 +38,7 @@ public class MovieTest {
 
 	@Test
 	public void testStringOutput() {
-		String displayedMovie = "            Life of Brian - 1979 -          Terry Jones - 9\n";
+		String displayedMovie = "                 Life of Brian - 1979 -          Terry Jones - 9\n";
 		assertEquals(displayedMovie, movie.toString());
 	}
 }

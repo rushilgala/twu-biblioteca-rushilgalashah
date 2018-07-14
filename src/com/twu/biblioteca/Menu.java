@@ -5,15 +5,17 @@ import com.twu.biblioteca.commands.Command;
 import com.twu.biblioteca.commands.ListCommand;
 import com.twu.biblioteca.commands.ReturnCommand;
 
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Menu {
 	private static final String welcomeMessage = "Welcome to Biblioteca!";
 	private static final LinkedHashMap<String, Command> commands = new LinkedHashMap<String, Command>();
-
+	private static final String[] bookCommands = new String[]{
+			"L", "C", "R"
+	};
+	private static final String[] movieCommands = new String[]{
+			"M", "O"
+	};
 
 	public static String welcomeMessage() {
 		return welcomeMessage;
@@ -40,8 +42,8 @@ public class Menu {
 		commands.put("L",new ListCommand("L", "List Books"));
 		commands.put("C",new CheckoutCommand("C", "Checkout Book"));
 		commands.put("R",new ReturnCommand("R", "Return Book"));
-		commands.put("M",new ReturnCommand("M", "List Movies"));
-		commands.put("O",new ReturnCommand("O", "Checkout Movie"));
+		commands.put("M",new ListCommand("M", "List Movies"));
+		commands.put("O",new CheckoutCommand("O", "Checkout Movie"));
 		commands.put("Q",new Command("Q", "Quit"));
 	}
 
@@ -60,5 +62,13 @@ public class Menu {
 	public static String executeCommand(String command, Media[] media) {
 		Command executeCommand = commands.get(command);
 		return executeCommand.execute(media);
+	}
+
+	public static boolean requiresBooks(String input) {
+		return Arrays.asList(bookCommands).contains(input);
+	}
+
+	public static boolean requiresMovies(String input) {
+		return Arrays.asList(movieCommands).contains(input);
 	}
 }

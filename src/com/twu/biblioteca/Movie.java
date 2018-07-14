@@ -23,7 +23,7 @@ public class Movie extends Media {
 	}
 
 	public String toString() {
-		return String.format("%25s - %4d - %20s - %1d\n",
+		return String.format("%30s - %4d - %20s - %1d\n",
 				this.getTitle(), this.getYearPublished(), this.getWriter(), this.getMovieRating());
 	}
 }

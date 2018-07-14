@@ -92,6 +92,11 @@ public class MenuTest {
 	}
 
 	@Test
+	public void testRequiredMoviesFromInput() {
+		assertTrue(menu.requiresMovies("M"));
+	}
+
+	@Test
 	public void testExecutingListBooks() {
 		assertEquals(displayedBooks,menu.executeCommand("L", books));
 	}

@@ -14,8 +14,10 @@ import static org.junit.Assert.*;
 public class BibliotecaTest {
 
     private BibliotecaApp bibliotecaApp;
-    private Book[] books;
+    private Media[] books;
+    private Media[] movies;
     private String displayedBooks;
+    private String displayedMovies;
     private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
     @Before
@@ -23,18 +25,30 @@ public class BibliotecaTest {
         bibliotecaApp = new BibliotecaApp();
         Menu.generateCommands();
         System.setOut(new PrintStream(outputStream));
-        books = new Book[] {
+        books = new Media[] {
             new Book("Life of Pi", "Yann Martel", 2001,false),
             new Book("Dune", "Frank Herbert", 1965,false),
             new Book("The Hobbit", "J. R. R. Tolkien", 1937,false),
             new Book("Tom Sawyer", "Mark Twain", 1876,false),
             new Book("To Kill a Mockingbird", "Harper Lee", 1960,false)
         };
+        movies = new Media[] {
+            new Movie("Life of Brian",1979, "Terry Jones",9,false),
+            new Movie("Rush",2013,"Ron Howard",8,false),
+            new Movie("The Thin Red Line",1998,"Terrence Malick",7,false),
+            new Movie("Crouching Tiger, Hidden Dragon",2001,"Ang Lee",10,false),
+            new Movie("Office Space",1999,"Mike Judge",7,false)
+        };
         displayedBooks = "               Life of Pi -          Yann Martel - 2001\n" +
             "                     Dune -        Frank Herbert - 1965\n" +
             "               The Hobbit -     J. R. R. Tolkien - 1937\n" +
             "               Tom Sawyer -           Mark Twain - 1876\n" +
             "    To Kill a Mockingbird -           Harper Lee - 1960\n\n";
+        displayedMovies = "                 Life of Brian - 1979 -          Terry Jones - 9\n" +
+            "                          Rush - 2013 -           Ron Howard - 8\n" +
+            "             The Thin Red Line - 1998 -      Terrence Malick - 7\n" +
+            "Crouching Tiger, Hidden Dragon - 2001 -              Ang Lee - 10\n" +
+            "                  Office Space - 1999 -           Mike Judge - 7\n\n";
     }
 
     @After
@@ -55,6 +69,11 @@ public class BibliotecaTest {
     @Test
     public void testListBooks() {
         assertArrayEquals(bibliotecaApp.getBooks(), books);
+    }
+
+    @Test
+    public void testListMovies() {
+        assertArrayEquals(bibliotecaApp.getMovies(), movies);
     }
 
     @Test
@@ -112,5 +131,11 @@ public class BibliotecaTest {
         System.setIn(in);
         bibliotecaApp.analyseUserInput("R");
         assertTrue(outputStream.toString().contains("That is not a valid book to return."));
+    }
+    
+    @Test
+    public void testMoviesUsingMatchCommand() {
+        bibliotecaApp.matchCommand("M");
+        assertEquals(displayedMovies,outputStream.toString());
     }
 }

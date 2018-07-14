@@ -63,12 +63,6 @@ public class MediaTest {
 	}
 
 	@Test
-	public void testMovieStringOutput() {
-		String displayedMovie = "            Life of Brian - 1979 -          Terry Jones - 9\n";
-		assertEquals(displayedMovie, movie.toString());
-	}
-
-	@Test
 	public void testBookIsEqual() {
 		Media sameBook = new Book("Life of Pi", "Yann Martel", 2001, false);
 		assertEquals(sameBook, book);
@@ -97,9 +91,4 @@ public class MediaTest {
 		assertFalse(noLoan.getLoanStatus());
 	}
 
-	@Test
-	public void testBookStringOutput() {
-		String displayedBook = "               Life of Pi -          Yann Martel - 2001\n";
-		assertEquals(displayedBook, book.toString());
-	}
 }
