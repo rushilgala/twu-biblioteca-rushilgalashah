@@ -1,6 +1,5 @@
 package com.twu.biblioteca.commands;
 
-import com.twu.biblioteca.Book;
 import com.twu.biblioteca.Media;
 import com.twu.biblioteca.Menu;
 
@@ -10,16 +9,24 @@ public class CheckoutCommand extends Command {
 		super(command, description);
 	}
 
-	@Override
 	public String execute(Media[] mediaObjects) {
 		System.out.print("Enter the title: ");
 		String title = Menu.userInput();
+		String type = "";
 		for (Media media : mediaObjects) {
+			type = Menu.checkType(media.getClass().getSimpleName());
 			if (media.getTitle().equals(title) && !media.getLoanStatus()) {
 				media.setLoanStatus(true);
-				return "Thank you! Enjoy the book";
+				return new StringBuilder()
+						.append("Thank you! Enjoy the ")
+						.append(type)
+						.toString();
 			}
 		}
-		return "That book is not available.";
+		return new StringBuilder()
+				.append("That ")
+				.append(type)
+				.append(" is not available.")
+				.toString();
 	}
 }

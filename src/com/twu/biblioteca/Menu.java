@@ -64,6 +64,10 @@ public class Menu {
 		return executeCommand.execute(media);
 	}
 
+	public static String checkType(String type) {
+		return (type.equals("Book")) ? "book" : "movie";
+	}
+
 	public static boolean requiresBooks(String input) {
 		return Arrays.asList(bookCommands).contains(input);
 	}

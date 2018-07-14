@@ -132,7 +132,7 @@ public class BibliotecaTest {
         bibliotecaApp.analyseUserInput("R");
         assertTrue(outputStream.toString().contains("That is not a valid book to return."));
     }
-    
+
     @Test
     public void testMoviesUsingMatchCommand() {
         bibliotecaApp.matchCommand("M");

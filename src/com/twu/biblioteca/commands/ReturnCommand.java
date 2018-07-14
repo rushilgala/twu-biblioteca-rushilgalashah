@@ -1,6 +1,5 @@
 package com.twu.biblioteca.commands;
 
-import com.twu.biblioteca.Book;
 import com.twu.biblioteca.Media;
 import com.twu.biblioteca.Menu;
 
@@ -15,12 +14,21 @@ public class ReturnCommand extends Command {
 	public String execute(Media[] mediaObjects) {
 		System.out.print("Enter the title: ");
 		String title = Menu.userInput();
+		String type = "";
 		for (Media media : mediaObjects) {
+			type = Menu.checkType(media.getClass().getSimpleName());
 			if (media.getTitle().equals(title) && media.getLoanStatus()) {
 				media.setLoanStatus(false);
-				return "Thank you for returning the book.";
+				return new StringBuilder()
+						.append("Thank you for returning the ")
+						.append(type)
+						.append(".").toString();
 			}
 		}
-		return "That is not a valid book to return.";
+		return new StringBuilder()
+				.append("That is not a valid ")
+				.append(type)
+				.append(" to return.")
+				.toString();
 	}
 }
