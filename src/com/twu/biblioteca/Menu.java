@@ -16,6 +16,9 @@ public class Menu {
 	private static final String[] movieCommands = new String[]{
 			"M", "O"
 	};
+	private static final String[] userCommands = new String[]{
+		"S", "D"
+	};
 
 	public static String welcomeMessage() {
 		return welcomeMessage;
@@ -44,6 +47,8 @@ public class Menu {
 		commands.put("R",new ReturnCommand("R", "Return Book"));
 		commands.put("M",new ListCommand("M", "List Movies"));
 		commands.put("O",new CheckoutCommand("O", "Checkout Movie"));
+		commands.put("S",new Command("S","Sign in"));
+		commands.put("V",new Command("V","View User Information (Must be signed in!)"));
 		commands.put("Q",new Command("Q", "Quit"));
 	}
 
@@ -74,5 +79,9 @@ public class Menu {
 
 	public static boolean requiresMovies(String input) {
 		return Arrays.asList(movieCommands).contains(input);
+	}
+
+	public static boolean requireUsers(String input) {
+		return Arrays.asList(userCommands).contains(input);
 	}
 }

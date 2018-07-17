@@ -1,8 +1,5 @@
 package com.twu.biblioteca;
 
-
-import java.util.Scanner;
-
 public class BibliotecaApp {
 
     private Media[] books = new Media[] {
@@ -21,6 +18,10 @@ public class BibliotecaApp {
 		    new Movie("Office Space",1999,"Mike Judge",7,false)
     };
 
+    private User[] users = new User[] {
+
+    };
+
 	public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         bibliotecaApp.displayInitialScreen();
@@ -34,6 +35,8 @@ public class BibliotecaApp {
     public Media[] getMovies() {
 			return movies;
     }
+
+    public User[] getUsers() { return users; }
 
     public void displayInitialScreen() {
 			Menu.initialise();
@@ -59,7 +62,9 @@ public class BibliotecaApp {
     public void matchCommand(String input) {
 			if (Menu.requiresBooks(input)) {
 				System.out.println(Menu.executeCommand(input,getBooks()));
-			} else {
+			} else if (Menu.requireUsers(input)) {
+				System.out.println();
+			} else if (Menu.requiresMovies(input)) {
 				System.out.println(Menu.executeCommand(input,getMovies()));
 			}
     }
