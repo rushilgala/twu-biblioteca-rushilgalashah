@@ -4,10 +4,10 @@ public class User {
 	private String name;
 	private String email;
 	private String phoneNumber;
-	private int libraryNumber;
+	private String libraryNumber;
 	private String password;
 
-	public User(String name, String email, String phoneNumber, int libraryNumber, String password) {
+	public User(String name, String email, String phoneNumber, String libraryNumber, String password) {
 		this.name = name;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
@@ -28,12 +28,7 @@ public class User {
 	}
 
 	public String getLibraryNumber() {
-		String libNumber = new StringBuilder().append(this.libraryNumber).toString();
-		return new StringBuilder()
-				.append(libNumber.substring(0,3))
-				.append("-")
-				.append(libNumber.substring(3))
-				.toString();
+		return this.libraryNumber;
 	}
 
 	public String getPassword() {

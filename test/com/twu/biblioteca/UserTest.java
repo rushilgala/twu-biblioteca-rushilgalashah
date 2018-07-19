@@ -14,7 +14,7 @@ public class UserTest {
 		user = new User("Rushil Gala-Shah",
 				"rushil@example.com",
 				"020 8000 0000",
-				1352341,
+				"135-2341",
 				"test!Password");
 	}
 
