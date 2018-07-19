@@ -57,11 +57,15 @@ public class Menu {
 	}
 
 	public static String enterCommand() {
-		return userInput().substring(0,1).toUpperCase();
+		String input = userInput();
+		return (input.length() > 0)
+				? input.substring(0,1).toUpperCase()
+				: "";
 	}
 
 	public static String userInput() {
-		return new Scanner(System.in).nextLine();
+		Scanner sc = new Scanner(System.in);
+		return (sc.hasNextLine()) ? sc.nextLine() : "";
 	}
 
 	public static String executeCommand(String command, Media[] media) {
