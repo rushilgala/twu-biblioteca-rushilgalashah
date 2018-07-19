@@ -15,7 +15,7 @@ public class UserState {
 			processSignIn(users);
 			return generateMessage();
 		} else {
-			return null;
+			return viewUserInformation();
 		}
 	}
 
@@ -66,5 +66,17 @@ public class UserState {
 	public static boolean checkCredentials(String libraryNumber, String password, User user) {
 		return user.getLibraryNumber().equals(libraryNumber) &&
 				user.getPassword().equals(password);
+	}
+
+	public static String viewUserInformation() {
+		if (isLoggedIn()) {
+			return getLoggedInUser().toString();
+		} else {
+			return notLoggedInMessage();
+		}
+	}
+
+	private static String notLoggedInMessage() {
+		return "Error: You must sign in first!";
 	}
 }

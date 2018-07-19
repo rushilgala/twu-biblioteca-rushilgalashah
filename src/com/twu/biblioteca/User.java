@@ -34,4 +34,12 @@ public class User {
 	public String getPassword() {
 		return this.password;
 	}
+
+	public String toString() {
+		return String.format("Name: %s\nEmail: %s\nPhone number: %s",
+				getName(),
+				getEmail(),
+				getPhoneNumber());
+	}
+
 }
