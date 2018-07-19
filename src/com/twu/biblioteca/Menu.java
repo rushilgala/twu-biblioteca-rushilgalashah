@@ -17,7 +17,7 @@ public class Menu {
 			"M", "O"
 	};
 	private static final String[] userCommands = new String[]{
-		"S", "D"
+		"S", "V"
 	};
 
 	public static String welcomeMessage() {
