@@ -101,4 +101,8 @@ public class MenuTest {
 		assertEquals(displayedBooks,menu.executeCommand("L", books));
 	}
 
+	@Test
+	public void testCheckSignInCommandIsValid() {
+		assertTrue(menu.checkIfValidOption("S"));
+	}
 }
