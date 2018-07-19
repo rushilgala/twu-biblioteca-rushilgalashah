@@ -16,6 +16,8 @@ public class BibliotecaTest {
     private BibliotecaApp bibliotecaApp;
     private Media[] books;
     private Media[] movies;
+    private User[] users;
+    private UserState userState;
     private String displayedBooks;
     private String displayedMovies;
     private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -23,6 +25,7 @@ public class BibliotecaTest {
     @Before
     public void setUp() {
         bibliotecaApp = new BibliotecaApp();
+        userState = new UserState();
         Menu.generateCommands();
         System.setOut(new PrintStream(outputStream));
         books = new Media[] {
@@ -38,6 +41,13 @@ public class BibliotecaTest {
             new Movie("The Thin Red Line",1998,"Terrence Malick",7,false),
             new Movie("Crouching Tiger, Hidden Dragon",2001,"Ang Lee",10,false),
             new Movie("Office Space",1999,"Mike Judge",7,false)
+        };
+        users = new User[] {
+            new User("Rushil Gala-Shah",
+                "rushil@example.com",
+                "020 8000 0000",
+                "135-2341",
+                "test!Password")
         };
         displayedBooks = "               Life of Pi -          Yann Martel - 2001\n" +
             "                     Dune -        Frank Herbert - 1965\n" +
@@ -137,5 +147,21 @@ public class BibliotecaTest {
     public void testMoviesUsingMatchCommand() {
         bibliotecaApp.matchCommand("M");
         assertEquals(displayedMovies,outputStream.toString());
+    }
+
+    @Test
+    public void testSignInWithUser() {
+        ByteArrayInputStream in = new ByteArrayInputStream("135-2341\ntest!Password\n".getBytes());
+        System.setIn(in);
+        bibliotecaApp.analyseUserInput("S");
+        assertTrue(outputStream.toString().contains("Welcome Rushil Gala-Shah, you are now signed in."));
+    }
+
+    @Test
+    public void testSignInWithIncorrectUser() {
+        ByteArrayInputStream in = new ByteArrayInputStream("135-2341\ntest!password\n".getBytes());
+        System.setIn(in);
+        bibliotecaApp.analyseUserInput("S");
+        assertTrue(outputStream.toString().contains("Invalid card number or password."));
     }
 }
