@@ -25,6 +25,7 @@ public class BibliotecaApp {
 					"135-2341",
 					"test!Password")
 	};
+	private UserState userState = new UserState();
 
 	public static void main(String[] args) {
 		BibliotecaApp bibliotecaApp = new BibliotecaApp();
@@ -57,11 +58,13 @@ public class BibliotecaApp {
 
 	public void analyseUserInput(String input) {
 		if (Menu.checkIfValidOption(input)) {
-			matchCommand(input);
+			checkLoggedInCommand(input);
 		} else {
 			System.out.println("Select a valid option!");
 		}
 	}
+
+
 
 	public void matchCommand(String input) {
 		if (Menu.requiresBooks(input)) {
@@ -70,6 +73,14 @@ public class BibliotecaApp {
 			System.out.println(UserState.executeCommand(input,getUsers()));
 		} else if (Menu.requiresMovies(input)) {
 			System.out.println(Menu.executeCommand(input,getMovies()));
+		}
+	}
+
+	public void checkLoggedInCommand(String input) {
+		if (Menu.requiresLogin(input) && !userState.isLoggedIn()) {
+			System.out.println(userState.notLoggedInMessage());
+		} else {
+			matchCommand(input);
 		}
 	}
 }

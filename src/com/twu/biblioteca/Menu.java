@@ -19,6 +19,9 @@ public class Menu {
 	private static final String[] userCommands = new String[]{
 		"S", "V"
 	};
+	private static final String[] requiresUserLogin = new String[] {
+		"C", "R", "V"
+	};
 
 	public static String welcomeMessage() {
 		return welcomeMessage;
@@ -87,5 +90,9 @@ public class Menu {
 
 	public static boolean requireUsers(String input) {
 		return Arrays.asList(userCommands).contains(input);
+	}
+
+	public static boolean requiresLogin(String input) {
+		return Arrays.asList(requiresUserLogin).contains(input);
 	}
 }

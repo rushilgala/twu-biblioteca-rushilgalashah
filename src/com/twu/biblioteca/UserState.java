@@ -76,7 +76,7 @@ public class UserState {
 		}
 	}
 
-	private static String notLoggedInMessage() {
+	public static String notLoggedInMessage() {
 		return "Error: You must sign in first!";
 	}
 }
