@@ -1,7 +1,7 @@
 package com.twu.biblioteca.commands;
 
-import com.twu.biblioteca.Book;
 import com.twu.biblioteca.Media;
+import com.twu.biblioteca.Menu;
 
 public class Command {
 	protected String command;
@@ -22,5 +22,10 @@ public class Command {
 
 	public String getDescription() {
 		return this.description;
+	}
+
+	protected String getTitleFromUser() {
+		System.out.print("Enter the title: ");
+		return Menu.userInput();
 	}
 }

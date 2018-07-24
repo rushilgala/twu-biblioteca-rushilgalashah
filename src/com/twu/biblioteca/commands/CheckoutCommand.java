@@ -10,8 +10,7 @@ public class CheckoutCommand extends Command {
 	}
 
 	public String execute(Media[] mediaObjects) {
-		System.out.print("Enter the title: ");
-		String title = Menu.userInput();
+		String title = getTitleFromUser();
 		String type = "";
 		for (Media media : mediaObjects) {
 			type = Menu.checkType(media.getClass().getSimpleName());
