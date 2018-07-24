@@ -43,32 +43,32 @@ public class MenuTest {
 	}
 
 	@Test
-	public void testWelcomeMessage() {
+	public void testShouldReturnWelcomeMessageOnWelcomeMessage() {
 		assertEquals("Welcome to Biblioteca!", menu.welcomeMessage());
 	}
 
 	@Test
-	public void testGetMenu() {
+	public void testShouldReturnMenuOnGetMenu() {
 		assertEquals("L - List Books\nC - Checkout Book\nR - Return Book\nM - List Movies\nO - Checkout Movie\nS - Sign in\nV - View User Information (Must be signed in!)\nQ - Quit\n", menu.getMenu());
 	}
 
 	@Test
-	public void testInvalidOption() {
+	public void testShouldReturnFalseOnCheckInvalidOption() {
 		assertFalse(menu.checkIfValidOption("B"));
 	}
 
 	@Test
-	public void testValidOption() {
+	public void testShouldReturnTrueOnCheckValidOption() {
 		assertTrue(menu.checkIfValidOption("Q"));
 	}
 
 	@Test
-	public void testValidListBookOption() {
+	public void testShouldReturnTrueOnCheckValidListBookOption() {
 		assertTrue(menu.checkIfValidOption("L"));
 	}
 
 	@Test
-	public void testThatOnlyFirstLetterIsTaken() {
+	public void testShouldReturnOnlyFirstLetterOnEnterCommand() {
 		ByteArrayInputStream in = new ByteArrayInputStream("List Books\n".getBytes());
 		System.setIn(in);
 		String output = menu.enterCommand();
@@ -76,7 +76,7 @@ public class MenuTest {
 	}
 
 	@Test
-	public void testThatLowerCaseGetsConvertedToUpperCase() {
+	public void testShouldConvertLowerCaseToUpperCaseOnEnterCommand() {
 		ByteArrayInputStream in = new ByteArrayInputStream("l\n".getBytes());
 		System.setIn(in);
 		String output = menu.enterCommand();
@@ -84,7 +84,7 @@ public class MenuTest {
 	}
 
 	@Test
-	public void testTakingUserInput() {
+	public void testShouldReturnInputOnUserInput() {
 		ByteArrayInputStream in = new ByteArrayInputStream("Q\n".getBytes());
 		System.setIn(in);
 		String output = menu.userInput();
@@ -92,17 +92,17 @@ public class MenuTest {
 	}
 
 	@Test
-	public void testRequiredMoviesFromInput() {
+	public void testShouldReturnTrueOnRequiresMoviesFromInput() {
 		assertTrue(menu.requiresMovies("M"));
 	}
 
 	@Test
-	public void testExecutingListBooks() {
+	public void testShouldDisplayBooksOnExecuteListBooks() {
 		assertEquals(displayedBooks,menu.executeCommand("L", books));
 	}
 
 	@Test
-	public void testCheckSignInCommandIsValid() {
+	public void testShouldReturnTrueOnCheckThatSignInCommandIsValid() {
 		assertTrue(menu.checkIfValidOption("S"));
 	}
 }

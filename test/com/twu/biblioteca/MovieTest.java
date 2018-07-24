@@ -15,33 +15,33 @@ public class MovieTest {
 	}
 
 	@Test
-	public void testGetTitle() {
+	public void testShouldReturnTitleOnGetTitle() {
 		assertEquals("Life of Brian", movie.getTitle());
 	}
 
 	@Test
-	public void testGetAuthor() {
+	public void testShouldReturnTitleOnGetWriter() {
 		assertEquals("Terry Jones", movie.getWriter());
 	}
 
 	@Test
-	public void testGetYearPublished() {
+	public void testShouldReturnYearOnGetYearPublished() {
 		assertEquals(1979, movie.getYearPublished());
 	}
 
 	@Test
-	public void testGetMovieRating() {
+	public void testShouldReturnMovieRatingOnGetMovieRating() {
 		assertEquals(9,movie.getMovieRating());
 	}
 
 	@Test
-	public void testStringOutput() {
+	public void testShouldReturnFormattedOutputOnToString() {
 		String displayedMovie = "                 Life of Brian - 1979 -          Terry Jones - 9\n";
 		assertEquals(displayedMovie, movie.toString());
 	}
 
 	@Test
-	public void testNewMovieWithNoRating() {
+	public void testShouldReturnNoRatingForNewMovieWithNoRating() {
 		Movie noRatingMovie = new Movie("Life of Brian",1979,"Terry Jones",-1,false);
 		assertEquals(-1, noRatingMovie.getMovieRating());
 	}
