@@ -67,7 +67,7 @@ public class BibliotecaTest {
 	}
 
 	@Test
-	public void testMainMethod() {
+	public void testShouldReturnMenuOnMainMethod() {
 		ByteArrayInputStream in = new ByteArrayInputStream("Q\n".getBytes());
 		System.setIn(in);
 		bibliotecaApp.main(null);
@@ -77,17 +77,17 @@ public class BibliotecaTest {
 	}
 
 	@Test
-	public void testListBooks() {
+	public void testShouldListBooksOnGetBooks() {
 		assertArrayEquals(bibliotecaApp.getBooks(), books);
 	}
 
 	@Test
-	public void testListMovies() {
+	public void testShouldListMoviesOnGetMovies() {
 		assertArrayEquals(bibliotecaApp.getMovies(), movies);
 	}
 
 	@Test
-	public void testEnterQToExit() {
+	public void testShouldReturnEmptyStringWhenInputIsQOnChooseOption() {
 		ByteArrayInputStream in = new ByteArrayInputStream("Q".getBytes());
 		System.setIn(in);
 		bibliotecaApp.chooseOption();
@@ -96,20 +96,20 @@ public class BibliotecaTest {
 
 
 	@Test
-	public void testIncorrectUserInputGivesExpectedOutput() {
+	public void testShouldReturnInvalidOptionMessageWhenIncorrectUserInputGivenOnAnalyseUserInput() {
 		bibliotecaApp.analyseUserInput("B");
 		assertEquals("Select a valid option!\n", outputStream.toString());
 	}
 
 	@Test
-	public void testCorrectUserInputWithListBooksOutputsCorrectly() {
+	public void testShouldReturnDisplayedBooksWhenInputIsLOnAnalysedUserInput() {
 		bibliotecaApp.analyseUserInput("L");
 		assertEquals(displayedBooks, outputStream.toString());
 
 	}
 
 	@Test
-	public void testPathForCheckingOutBook() {
+	public void testShouldReturnSuccessfulCheckoutMessageOnAnalyseUserInput() {
 		userState.setLoggedInUser(users[0]);
 		ByteArrayInputStream in = new ByteArrayInputStream("Dune\nQ\n".getBytes());
 		System.setIn(in);
@@ -118,7 +118,7 @@ public class BibliotecaTest {
 	}
 
 	@Test
-	public void testPathForReturningBook() {
+	public void testShouldReturnSucessfulReturnMessageOnAnalyseUserInput() {
 		userState.setLoggedInUser(users[0]);
 		ByteArrayInputStream in = new ByteArrayInputStream("Dune\n".getBytes());
 		System.setIn(in);
@@ -130,7 +130,7 @@ public class BibliotecaTest {
 	}
 
 	@Test
-	public void testPathForInvalidCheckout() {
+	public void testShouldReturnInvalidCheckoutErrorMessageOnAnalyseUserInput() {
 		userState.setLoggedInUser(users[0]);
 		ByteArrayInputStream in = new ByteArrayInputStream("Dupe\nQ\n".getBytes());
 		System.setIn(in);
@@ -139,7 +139,7 @@ public class BibliotecaTest {
 	}
 
 	@Test
-	public void testPathForInvalidReturn() {
+	public void testShouldReturnInvalidReturnErrorMessageOnAnalyseUserInput() {
 		userState.setLoggedInUser(users[0]);
 		ByteArrayInputStream in = new ByteArrayInputStream("Dune\nQ\n".getBytes());
 		System.setIn(in);
@@ -148,13 +148,13 @@ public class BibliotecaTest {
 	}
 
 	@Test
-	public void testMoviesUsingMatchCommand() {
+	public void testShouldReturnDisplayedMoviesOnMatchCommand() {
 		bibliotecaApp.matchCommand("M");
 		assertEquals(displayedMovies, outputStream.toString());
 	}
 
 	@Test
-	public void testSignInWithUser() {
+	public void testShouldReturnSuccessfulSignInMessageOnAnalyseUserInput() {
 		ByteArrayInputStream in = new ByteArrayInputStream("135-2341\ntest!Password\n".getBytes());
 		System.setIn(in);
 		bibliotecaApp.analyseUserInput("S");
@@ -162,7 +162,7 @@ public class BibliotecaTest {
 	}
 
 	@Test
-	public void testSignInWithIncorrectUser() {
+	public void testShouldReturnErrorSignInMessageOnAnalyseUserInput() {
 		ByteArrayInputStream in = new ByteArrayInputStream("135-2341\ntest!password\n".getBytes());
 		System.setIn(in);
 		bibliotecaApp.analyseUserInput("S");
@@ -170,13 +170,13 @@ public class BibliotecaTest {
 	}
 
 	@Test
-	public void testCheckoutWithoutLogin() {
+	public void testShouldReturnSignInRequiredMessageOnCheckIfLoggedIn() {
 		bibliotecaApp.checkLoggedInCommand("C");
 		assertEquals("Error: You must sign in first!\n", outputStream.toString());
 	}
 
 	@Test
-	public void testCheckoutWithLogin() {
+	public void testShouldReturnSuccessfulCheckoutMessageWithLoginOnAnalyseUserInput() {
 		ByteArrayInputStream in = new ByteArrayInputStream("135-2341\ntest!Password\nr".getBytes());
 		System.setIn(in);
 		bibliotecaApp.analyseUserInput("S");

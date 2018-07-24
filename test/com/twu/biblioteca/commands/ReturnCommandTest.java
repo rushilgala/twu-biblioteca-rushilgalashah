@@ -18,15 +18,13 @@ public class ReturnCommandTest {
 
 	private ReturnCommand returnCommand;
 	private ListCommand listCommand;
-	private CheckoutCommand checkoutCommand;
 	private Book[] books;
 	private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-
+	private final String errorMessage = "That is not a valid book to return.";
 	@Before
 	public void setUp() {
 		returnCommand = new ReturnCommand("R","Return Book");
 		listCommand = new ListCommand("L","List Books");
-		checkoutCommand = new CheckoutCommand("C","Checkout Book");
 		System.setOut(new PrintStream(outputStream));
 		books = new Book[]{
 				new Book("Life of Pi", "Yann Martel", 2001, false),
@@ -43,7 +41,7 @@ public class ReturnCommandTest {
 	}
 
 	@Test
-	public void testReturnedBookChangesStatus() {
+	public void testShouldReturnFalseForReturnedBookOnExecute() {
 		assertTrue(books[1].getLoanStatus());
 		ByteArrayInputStream in = new ByteArrayInputStream("Dune\n".getBytes());
 		System.setIn(in);
@@ -52,7 +50,7 @@ public class ReturnCommandTest {
 	}
 
 	@Test
-	public void testReturnedBookAppearsOnList() {
+	public void testShouldReturnTrueForReturnedBookOnListCommandExecute() {
 		listCommand.execute(books);
 		assertFalse(outputStream.toString().contains("Dune"));
 		ByteArrayInputStream in = new ByteArrayInputStream("Dune\n".getBytes());
@@ -62,23 +60,23 @@ public class ReturnCommandTest {
 	}
 
 	@Test
-	public void testReturnMessageOnSuccessfulReturn() {
+	public void testShouldReturnSuccessMessageOnReturnExecute() {
 		ByteArrayInputStream in = new ByteArrayInputStream("Dune\n".getBytes());
 		System.setIn(in);
 		assertEquals("Thank you for returning the book.",returnCommand.execute(books));
 	}
 
 	@Test
-	public void testReturnMessageOnUnsuccessfulReturn() {
+	public void testShouldReturnErrorMessageOnReturnExecute() {
 		ByteArrayInputStream in = new ByteArrayInputStream("Dupe\n".getBytes());
 		System.setIn(in);
-		assertEquals("That is not a valid book to return.",returnCommand.execute(books));
+		assertEquals(errorMessage,returnCommand.execute(books));
 	}
 
 	@Test
-	public void testReturnOnBookNotLoanedOut() {
+	public void testShouldReturnErrorMessageForBookNotLoanedOutOnReturnCommandExecute() {
 		ByteArrayInputStream in = new ByteArrayInputStream("Life of Pi\n".getBytes());
 		System.setIn(in);
-		assertEquals("That is not a valid book to return.",returnCommand.execute(books));
+		assertEquals(errorMessage,returnCommand.execute(books));
 	}
 }

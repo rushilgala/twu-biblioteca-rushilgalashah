@@ -41,7 +41,7 @@ public class ListCommandTest {
 
 
 	@Test
-	public void testDisplayBooksFormat() {
+	public void testShouldDisplayBooksFormattedOnExecute() {
 		assertEquals(displayedBooks, listCommand.execute(books));
 	}
 }

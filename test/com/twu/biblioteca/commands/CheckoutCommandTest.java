@@ -40,7 +40,7 @@ public class CheckoutCommandTest {
 	}
 
 	@Test
-	public void testBookDoesNotAppearAfterCheckedOut() {
+	public void testShouldNotListBookAfterCheckOutOnList() {
 		ByteArrayInputStream in = new ByteArrayInputStream("Dune\n".getBytes());
 		System.setIn(in);
 		checkoutCommand.execute(books);
@@ -49,7 +49,7 @@ public class CheckoutCommandTest {
 	}
 
 	@Test
-	public void testBookIsMisspelledReturnsNotAvailable() {
+	public void testShouldReturnBookNotAvailableIfBookIsMisspelledOnCheckOut() {
 		ByteArrayInputStream in = new ByteArrayInputStream("Dupe\n".getBytes());
 		System.setIn(in);
 		assertEquals("That book is not available.",checkoutCommand.execute(books));
@@ -57,14 +57,14 @@ public class CheckoutCommandTest {
 
 
 	@Test
-	public void testCheckoutMessageOnSuccessfulCheckout() {
+	public void testShouldReturnSuccessMessageOnCheckout() {
 		ByteArrayInputStream in = new ByteArrayInputStream("Dune\n".getBytes());
 		System.setIn(in);
 		assertEquals("Thank you! Enjoy the book",checkoutCommand.execute(books));
 	}
 
 	@Test
-	public void testCheckoutExistingCheckedoutBookShouldFail() {
+	public void testShouldReturnErrorMessageWhenCheckingOutCheckedOutBookOnCheckout() {
 		books[1].setLoanStatus(true);
 		ByteArrayInputStream in = new ByteArrayInputStream("Dune\n".getBytes());
 		System.setIn(in);

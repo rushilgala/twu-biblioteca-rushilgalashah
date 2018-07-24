@@ -25,17 +25,17 @@ public class CommandTest {
 
 
 	@Test
-	public void testThatNoOutputWhenRunningExecute() {
+	public void testShouldReturnNullOnExecute() {
 		assertEquals(null,command.execute(books));
 	}
 
 	@Test
-	public void testGetCommandLetter() {
+	public void testShouldReturnLetterOnGetCommand() {
 		assertEquals("Q",command.getCommand());
 	}
 
 	@Test
-	public void testGetDescription() {
+	public void testShouldReturnDescriptionOnGetDescription() {
 		assertEquals("Quit",command.getDescription());
 	}
 }

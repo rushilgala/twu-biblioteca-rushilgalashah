@@ -15,22 +15,22 @@ public class BookTest {
 	}
 
 	@Test
-	public void testGetTitle() {
+	public void testShouldReturnTitleOnGetTitle() {
 		assertEquals("Life of Pi", book.getTitle());
 	}
 
 	@Test
-	public void testGetAuthor() {
+	public void testShouldReturnWriterOnGetWriter() {
 		assertEquals("Yann Martel", book.getWriter());
 	}
 
 	@Test
-	public void testGetYearPublished() {
+	public void testShouldReturnYearOnGetYearPublished() {
 		assertEquals(2001, book.getYearPublished());
 	}
 
 	@Test
-	public void testStringOutput() {
+	public void testShouldReturnStringOutputOnToString() {
 		String displayedBook = "               Life of Pi -          Yann Martel - 2001\n";
 		assertEquals(displayedBook, book.toString());
 	}
