@@ -33,38 +33,38 @@ public class UserStateTest {
 	}
 
 	@Test
-	public void testSuccessfulSignInReturnsCorrectUserObject() {
+	public void testShouldReturnCorrectUserObjectOnSuccessfulSignIn() {
 		assertEquals(user, userState.signIn("135-2341", "test!Password", users));
 	}
 
 	@Test
-	public void testGetLoggedInUser() {
+	public void testShouldReturnUserOnGetLoggedInUser() {
 		userState.setLoggedInUser(user);
 		assertEquals(user, userState.getLoggedInUser());
 	}
 
 	@Test
-	public void testOnUserStateCreationUserIsNull() {
+	public void testUserIsNullOnUserStateCreation() {
 		assertTrue(userState.getLoggedInUser() == null);
 	}
 
 	@Test
-	public void testCorrectCredentials() {
+	public void testShouldReturnTrueWhenCorrectCredentialsEntered() {
 		assertTrue(userState.checkCredentials("135-2341", "test!Password", user));
 	}
 
 	@Test
-	public void testInvalidCredentials() {
+	public void testShouldReturnFalseWhenInvalidCredentialsEntered() {
 		assertFalse(userState.checkCredentials("135-2341", "test!password", user));
 	}
 
 	@Test
-	public void testNotLoggedInUserReturnsFalse() {
+	public void testShouldReturnFalseWhenUserNotLoggedIn() {
 		assertFalse(userState.isLoggedIn());
 	}
 
 	@Test
-	public void testLoggedInUserReturnsTrue() {
+	public void testShouldReturnTrueWhenUserLoggedIn() {
 		ByteArrayInputStream in = new ByteArrayInputStream("135-2341\ntest!Password\n".getBytes());
 		System.setIn(in);
 		userState.processSignIn(users);
@@ -72,13 +72,13 @@ public class UserStateTest {
 	}
 
 	@Test
-	public void testViewInformationIfLoggedIn() {
+	public void testShouldReturnInformationIfLoggedInOnViewInformation() {
 		userState.setLoggedInUser(user);
 		assertEquals("Name: Rushil Gala-Shah\nEmail: rushil@example.com\nPhone number: 020 8000 0000", userState.viewUserInformation());
 	}
 
 	@Test
-	public void testViewInformationReturnsErrorMessageIfNotLoggedIn() {
+	public void testShouldReturnErrorMessageIfNotLoggedInOnViewInformation() {
 		assertEquals("Error: You must sign in first!", userState.viewUserInformation());
 	}
 }
