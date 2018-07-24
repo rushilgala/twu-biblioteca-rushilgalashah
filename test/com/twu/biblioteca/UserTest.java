@@ -19,27 +19,27 @@ public class UserTest {
 	}
 
 	@Test
-	public void testGetName() {
+	public void testShouldReturnNameOnGetName() {
 		assertEquals("Rushil Gala-Shah", user.getName());
 	}
 
 	@Test
-	public void testGetEmail() {
+	public void testShouldReturnEmailOnGetEmail() {
 		assertEquals("rushil@example.com",user.getEmail());
 	}
 
 	@Test
-	public void testGetPhoneNumber() {
+	public void testShouldReturnPhoneNumberOnGetPhoneNumber() {
 		assertEquals("020 8000 0000", user.getPhoneNumber());
 	}
 
 	@Test
-	public void testGetLibraryNumber() {
+	public void testShouldReturnLibraryNumberOnGetLibraryNumber() {
 		assertEquals("135-2341",user.getLibraryNumber());
 	}
 
 	@Test
-	public void testGetPassword() {
+	public void testShouldReturnPasswordOnGetPassword() {
 		assertEquals("test!Password",user.getPassword());
 	}
 }
