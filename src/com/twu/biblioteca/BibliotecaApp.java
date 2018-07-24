@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 public class BibliotecaApp {
 
+	private static final String validOption = "Select a valid option!";
 	private Media[] books = new Media[] {
 			new Book("Life of Pi", "Yann Martel", 2001,false),
 			new Book("Dune", "Frank Herbert", 1965,false),
@@ -60,7 +61,7 @@ public class BibliotecaApp {
 		if (Menu.checkIfValidOption(input)) {
 			checkLoggedInCommand(input);
 		} else {
-			System.out.println("Select a valid option!");
+			System.out.println(validOption);
 		}
 	}
 
