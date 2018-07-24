@@ -12,8 +12,7 @@ public class ReturnCommand extends Command {
 
 	@Override
 	public String execute(Media[] mediaObjects) {
-		System.out.print("Enter the title: ");
-		String title = Menu.userInput();
+		String title = getTitleFromUser();
 		String type = "";
 		for (Media media : mediaObjects) {
 			type = Menu.checkType(media.getClass().getSimpleName());
