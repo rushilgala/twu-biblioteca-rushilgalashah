@@ -19,74 +19,74 @@ public class MediaTest {
 	}
 
 	@Test
-	public void testGetTitle() {
+	public void testShouldReturnTitleOnGetTitle() {
 		assertEquals("Life of Brian", movie.getTitle());
 	}
 
 	@Test
-	public void testGetAuthor() {
+	public void testShouldReturnWriterOnGetWriter() {
 		assertEquals("Terry Jones", movie.getWriter());
 	}
 
 	@Test
-	public void testGetYearPublished() {
+	public void testShouldReturnYearOnGetYearPublished() {
 		assertEquals(1979, movie.getYearPublished());
 	}
 
 	@Test
-	public void testMovieIsEqual() {
+	public void testShouldReturnEqualToTwoMovieObjects() {
 		Movie sameMovie = new Movie("Life of Brian",1979,"Terry Jones", 9,false);
 		assertEquals(sameMovie,movie);
 	}
 
 	@Test
-	public void testFakeMovieDifferentYearIsNotEqual() {
+	public void testShouldReturnNotEqualWithMovieHasDifferentYear() {
 		Movie fakeMovie = new Movie("Life of Brian",1980,"Terry Jones", 9,false);
 		assertNotEquals(fakeMovie, movie);
 	}
 
 	@Test
-	public void testMovieIsNotOnLoanInitially() {
+	public void testShouldReturnFalseForMovieNotOnLoanInitially() {
 		assertFalse(movie.getLoanStatus());
 	}
 
 	@Test
-	public void testMovieStatusIsChanged() {
+	public void testShouldReturnTrueOnMovieStatusIsSetToTrue() {
 		movie.setLoanStatus(true);
 		assertTrue(movie.getLoanStatus());
 	}
 
 	@Test
-	public void testMovieWithNoLoanStatusIsNotCheckedOut() {
+	public void testShouldReturnFalseForMovieNotCheckedOutLoanStatus() {
 		Movie noLoan = new Movie("Life of Brian",1979,"Terry Jones",9);
 		assertFalse(noLoan.getLoanStatus());
 	}
 
 	@Test
-	public void testBookIsEqual() {
+	public void testShouldReturnEqualForTwoBookObjects() {
 		Media sameBook = new Book("Life of Pi", "Yann Martel", 2001, false);
 		assertEquals(sameBook, book);
 	}
 
 	@Test
-	public void testFakeBookDifferentYearIsNotEqual() {
+	public void testShouldReturnFalseForBookWithDifferentYear() {
 		Media fakeBook = new Book("Life of Pi","Yann Martel", 2018, false);
 		assertNotEquals(fakeBook, book);
 	}
 
 	@Test
-	public void testBookIsNotOnLoanInitially() {
+	public void testShouldReturnFalseForBookNotOnLoan() {
 		assertFalse(book.getLoanStatus());
 	}
 
 	@Test
-	public void testBookStatusIsChanged() {
+	public void testShouldReturnTrueWhenBookIsLoanedOut() {
 		book.setLoanStatus(true);
 		assertTrue(book.getLoanStatus());
 	}
 
 	@Test
-	public void testBookWithNoLoanStatusIsNotCheckedOut() {
+	public void testShouldReturnFalseWhenBookIsNotCheckedOut() {
 		Media noLoan = new Book("Life of Pi","Yann Martel",2001);
 		assertFalse(noLoan.getLoanStatus());
 	}
