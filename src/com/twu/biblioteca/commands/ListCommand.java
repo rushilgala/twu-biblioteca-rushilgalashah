@@ -1,6 +1,5 @@
 package com.twu.biblioteca.commands;
 
-import com.twu.biblioteca.Book;
 import com.twu.biblioteca.Media;
 
 public class ListCommand extends Command {
