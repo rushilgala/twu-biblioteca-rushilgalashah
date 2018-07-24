@@ -6,6 +6,9 @@ public class UserState {
 
 	private static User user;
 	private static final String errorMessage = "Error: You must sign in first!";
+	private static final String invalidLoginMessage = "Invalid card number or password.";
+	private static final String promptForLogin = "Enter library number: ";
+	private static final String promptForPassword = "Enter password: ";
 	public UserState() {
 		user = null;
 	}
@@ -21,8 +24,8 @@ public class UserState {
 
 	public static void processSignIn(User[] users) {
 		Scanner sc = new Scanner(System.in);
-		String libraryNumber = getInput(sc,"Enter library number: ");
-		String password = getInput(sc,"Enter password: ");
+		String libraryNumber = getInput(sc,promptForLogin);
+		String password = getInput(sc,promptForPassword);
 		setLoggedInUser(signIn(libraryNumber,password,users));
 	}
 
@@ -33,7 +36,7 @@ public class UserState {
 					.append(", you are now signed in.")
 					.toString();
 		} else {
-			return "Invalid card number or password.";
+			return invalidLoginMessage;
 		}
 	}
 
