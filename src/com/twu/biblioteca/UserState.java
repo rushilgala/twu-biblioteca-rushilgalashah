@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class UserState {
 
 	private static User user;
-
+	private static final String errorMessage = "Error: You must sign in first!";
 	public UserState() {
 		user = null;
 	}
@@ -77,6 +77,6 @@ public class UserState {
 	}
 
 	public static String notLoggedInMessage() {
-		return "Error: You must sign in first!";
+		return errorMessage;
 	}
 }
